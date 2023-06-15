@@ -3,12 +3,12 @@
 ---------------------------*/
 @font-face {
     font-family: "base-font";
-    src: url(/Assets/Fonts/Main-font.woff);
+    src: url(/Assets/Fonts/Main-font.ttf);
 }
 
 @font-face {
     font-family: "head-font";
-    src: url(/Assets/Fonts/Title-font.woff);
+    src: url(/Assets/Fonts/Title-font.ttf);
 }
 
 
