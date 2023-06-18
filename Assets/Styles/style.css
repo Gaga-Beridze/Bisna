@@ -23,7 +23,6 @@
     --txt-color: #1d1d1d;
     --main-color: #00af83;
     --main-color-hover: #009b74;
-    --button-color: #bdffeeb2;
     --box-shadow: #00000017;
 
     /*--------- Font size ---------*/
@@ -50,8 +49,108 @@
     --transition-5: .5s ease;
     --transition-6: .6s ease;
 
-    /*--------- Bootstrap colors ---------*/
+    /*--------- Bootstrap ---------*/
     --bs-dropdown-link-active-bg: #00af83 !important;
+    --bs-btn-active-border-color: transparent !important;
+}
+
+/*--------------------------------------
+# Scrollbar
+--------------------------------------*/
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/*-----------------------------------------------
+  # Webkit tools
+-----------------------------------------------*/
+input[type="search"]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type="search"]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+/*--------------------------------------
+# Body with elements
+--------------------------------------*/
+body {
+    font-size: var(--font-size-base);
+    background-color: var(--bg-color-2);
+    color: var(--txt-color);
+}
+
+body.dark {
+    --bg-color-1: #242526;
+    --bg-color-2: #3f3f3f;
+    --txt-color: #fff;
+}
+
+body.pink {
+    --main-color: rgb(255, 125, 147) !important;
+    --main-color-hover: rgb(253, 98, 124) !important;
+}
+
+body.green {
+    --main-color: #5f7bf8 !important;
+    --main-color-hover: #4b64dd !important;
+}
+
+body.orange {
+    --main-color: rgb(255, 123, 46) !important;
+    --main-color-hover: rgb(255, 107, 22) !important;
+}
+
+body.red {
+    --main-color: rgb(224, 79, 79) !important;
+    --main-color-hover: rgb(218, 62, 62) !important;
+}
+
+body.black {
+    --main-color: #654E92 !important;
+    --main-color-hover: #574183 !important;
+}
+
+body.default {
+    --main-color: #00af83 !important;
+    --main-color-hover: #009b74 !important;
+}
+
+/* ----- Font scheme ----- */
+body.FontSize-small {
+    --font-size-smallest: 9px;
+    --font-size-small: 11px;
+    --font-size-base: 13px;
+    --font-size-big: 16px;
+    --font-size-huge: 18px;
+}
+
+body.FontSize-medium {
+    --font-size-smallest: 11px;
+    --font-size-small: 14px;
+    --font-size-base: 15px;
+    --font-size-big: 20px;
+    --font-size-huge: 25px;
+}
+
+body.FontSize-big {
+    --font-size-smallest: 13px;
+    --font-size-small: 15px;
+    --font-size-base: 17px;
+    --font-size-big: 22px;
+    --font-size-huge: 27px;
 }
 
 
@@ -67,17 +166,12 @@
 
 *:focus {
     outline: none !important;
-    border: none !important;
     box-shadow: none !important;
 }
 
-body {
-    background-color: var(--bg-color-2);
-    width: 100vw;
-}
-
 ul,
-li {
+li,
+p {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -89,11 +183,30 @@ a {
 }
 
 .line {
-    border-right: 2px solid var(--bg-color-hover);
-    padding-right: 10px;
+    border-right: 2px solid var(--bg-color-2);
+    padding-right: 5px;
     display: flex;
     align-items: center;
-    margin-right: 5px;
+    margin-right: 15px;
+
+}
+
+/*--------------------------------------
+# Switch button
+--------------------------------------*/
+.form-check-input {
+    margin-top: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    background-color: var(--bg-color-1);
+    border-color: var(--main-color);
+    transition: var(--transition-4);
+}
+
+.form-check-input:checked {
+    border-color: var(--main-color);
+    background-color: var(--main-color-hover);
+    transition: var(--transition-4);
 }
 
 /*---------------------------
@@ -105,7 +218,7 @@ a {
     margin: auto;
     margin-top: 10px;
     border-radius: var(--radius-medium);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(0, 0, 0, 0.082) 0px 7px 29px 0px;
     padding: 5px 30px;
 }
 
@@ -120,20 +233,21 @@ a {
     margin: 0 .2rem;
     border-radius: var(--radius-medium);
     cursor: pointer;
+    color: var(--txt-color);
 }
 
 .nav-link:hover {
-    background-color: var(--button-color);
-    color: var(--main-color);
+    background-color: var(--main-color);
+    color: #fff;
 }
 
 .nav-link.active {
-    color: var(--main-color) !important;
+    color: #fff !important;
 }
 
 .nav-link.show {
-    background-color: var(--button-color);
-    color: var(--main-color) !important;
+    background-color: var(--main-color);
+    color: #fff !important;
 }
 
 .navbar-expand-lg .navbar-nav .dropdown-menu {
@@ -147,6 +261,7 @@ a {
     transition: var(--transition-3);
     margin-top: 20px;
     padding: 10px;
+    background-color: var(--bg-color-1);
 }
 
 .navbar-expand-lg .navbar-nav .dropdown-menu.show {
@@ -161,7 +276,7 @@ a {
     width: auto;
     border: none;
     border-radius: var(--radius-big);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(0, 0, 0, 0.068) 0px 7px 29px 0px;
 }
 
 .dropdown-toggle::after {
@@ -186,11 +301,12 @@ a {
     margin: auto;
     border-radius: var(--radius-medium);
     padding: 7px 15px;
+    color: var(--txt-color);
 }
 
 .navbar-expand-lg .navbar-nav .dropdown-item:hover {
-    background-color: var(--button-color);
-    color: var(--main-color);
+    background-color: var(--main-color);
+    color: #fff;
 }
 
 .lang-btn {
@@ -212,6 +328,7 @@ a {
     font-size: var(--font-size-smallest);
     font-weight: 600;
     font-family: var(--base-font);
+    color: var(--txt-color);
 }
 
 .lang-item img,
@@ -225,8 +342,10 @@ a {
     --bs-dropdown-min-width: 0;
     left: -9px !important;
     margin-top: 10px !important;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
     border: none;
+    color: var(--txt-color);
+    background-color: var(--bg-color-1);
     padding: 5px;
     border-radius: var(--radius-medium);
 }
@@ -257,14 +376,16 @@ a {
     width: 30px;
     height: 30px;
     display: flex;
+    margin: 0 .3rem;
     justify-content: center;
+    color: var(--txt-color);
     align-items: center;
     border-radius: var(--radius-round);
 }
 
 .nav-btn:hover {
-    background-color: var(--button-color);
-    color: var(--main-color);
+    background-color: var(--main-color);
+    color: #fff;
 }
 
 .nav-btn:first-of-type {
@@ -308,14 +429,19 @@ a {
 /*---------------------------
 # Offcanvas
 ---------------------------*/
+.offcanvas {
+    background-color: var(--bg-color-1);
+}
+
 .offcanvas-backdrop {
     backdrop-filter: blur(1.8px);
     background-color: unset;
     opacity: 1 !important;
+    background-color: #1d1d1d5e;
 }
 
 .offcanvas-header {
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 16px;
     width: 95%;
     margin: auto;
     border-radius: var(--radius-big);
@@ -328,14 +454,25 @@ a {
     color: var(--txt-color);
 }
 
-
-.offcanvas {
+.offcanvas-start {
     border-radius: 0 var(--radius-big) var(--radius-big) 0;
+}
+
+.offcanvas-end {
+    border-radius: var(--radius-big) 0 0 var(--radius-big);
+}
+
+.offcanvas-top {
+    border-radius: 0 0 var(--radius-big) var(--radius-big);
 }
 
 @media (max-width: 768px) {
     .offcanvas {
         width: 88% !important;
+    }
+
+    .offcanvas-top {
+        width: 100% !important;
     }
 }
 
@@ -358,19 +495,253 @@ a {
     justify-content: center;
     align-items: center;
     border-radius: var(--radius-round);
-    background-color: var(--button-color);
-    color: var(--main-color) !important;
+    background-color: var(--main-color);
+    color: #fff !important;
     transition: var(--transition-3);
     margin-top: -15px;
     font-size: var(--font-size-base);
 }
 
 .btn-close:hover {
-    background-color: var(--main-color);
+    background-color: var(--main-color-hover);
     color: #fff !important;
 }
-
 
 /*---------------------------
 # Dropdown
 ---------------------------*/
+.dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 30px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: var(--transition-3);
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+/*---------------------------
+# Modal
+---------------------------*/
+.modal {
+    backdrop-filter: blur(2px);
+    transition: var(--transition-3);
+}
+
+.modal-content {
+    border-radius: var(--radius-huge);
+    box-shadow: rgba(100, 100, 111, 0.082)px 29px 0px;
+}
+
+.modal-header,
+.modal-footer {
+    border: none;
+}
+
+.modal-title {
+    font-family: var(--head-font);
+    font-size: var(--font-size-base) !important;
+}
+
+.modal-title i {
+    font-size: var(--font-size-small) !important;
+}
+
+/*---------------------------
+# Search menu
+---------------------------*/
+.often-search {
+    border-radius: var(--radius-huge);
+}
+
+.search-menu input {
+    border-radius: var(--radius-huge);
+    border: 1px solid var(--bg-color-hover);
+    font-family: var(--base-font);
+    font-size: var(--font-size-base);
+}
+
+.search-menu input:focus {
+    border: 1px solid var(--main-color) !important;
+}
+
+/*---------------------------
+# Settings menu
+---------------------------*/
+.settings-body {
+    padding: 0;
+}
+
+.settings-container {
+    padding: 10px;
+}
+
+.settings-item {
+    background-color: var(--bg-color-1);
+    color: var(--txt-color);
+    border-radius: var(--radius-medium);
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.116) 0px 8px 24px;
+}
+
+.settings-header {
+    font-size: var(--font-size-base);
+    font-family: var(--head-font);
+}
+
+.settings-header p,
+label {
+    font-size: var(--font-size-base);
+    font-family: var(--base-font);
+}
+
+.settings-header-icon {
+    width: 30px;
+    height: 30px;
+    background-color: var(--bg-color-1);
+    display: inline-flex;
+    justify-content: center;
+    color: var(--main-color);
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: var(--font-size-base);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+}
+
+.settings-switch {
+    padding: 10px;
+    border-radius: var(--radius-medium);
+    color: var(--txt-color);
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: var(--transition-4);
+    cursor: pointer;
+    margin-bottom: 0.4rem;
+}
+
+.settings-switch label,
+.settings-switch input {
+    cursor: pointer;
+}
+
+.settings-switch p {
+    font-size: var(--font-size-base);
+}
+
+.settings-switch:hover {
+    background-color: var(--bg-color-2);
+}
+
+/*--------------------------------------
+  # Color change settings
+--------------------------------------*/
+#pink {
+    background-color: rgb(255, 125, 147);
+    transition: var(--transition-3);
+}
+
+#pink:hover {
+    background-color: rgb(253, 98, 124);
+}
+
+#green {
+    background-color: #5f7bf8;
+    transition: var(--transition-3);
+}
+
+#green:hover {
+    background-color: #4b64dd;
+}
+
+#orange {
+    background-color: rgb(255, 123, 46);
+    transition: var(--transition-3);
+}
+
+#orange:hover {
+    background-color: rgb(255, 107, 22);
+}
+
+#red {
+    background-color: rgb(224, 79, 79);
+    transition: var(--transition-3);
+}
+
+#red:hover {
+    background-color: rgb(218, 62, 62);
+}
+
+#black {
+    background-color: #654E92;
+    transition: var(--transition-3);
+}
+
+#black:hover {
+    background-color: #574183;
+}
+
+#default {
+    background-color: #00af83;
+    transition: var(--transition-3);
+}
+
+#default:hover {
+    background-color: #009b74;
+}
+
+.color-main-content {
+    margin-top: 10px;
+}
+
+.color {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 0 .2rem;
+    border-radius: var(--radius-medium);
+    cursor: pointer;
+    animation: pulse var(--transition-4);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+}
+
+.selected {
+    background-color: var(--main-color-hover);
+}
+
+.color-checked {
+    position: relative;
+    top: -5px;
+    left: -17px;
+    border: 3px solid transparent;
+    border-radius: var(--radius-round);
+    transition: var(--transition-3);
+    width: 20px;
+    background-color: var(--bg-color-1);
+    height: 20px;
+    z-index: 999;
+    color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.color-checked.active {
+    opacity: 1;
+    transition: var(--transition-3);
+}
+
+@media (max-width: 768px) {
+    .color:last-child {
+        margin-top: 10px;
+    }
+}
