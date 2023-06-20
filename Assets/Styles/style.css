@@ -1,16 +1,8 @@
 /*---------------------------
 # Font Family
 ---------------------------*/
-@font-face {
-    font-family: "base-font";
-    src: url(/Assets/Fonts/Main-font.ttf);
-}
-
-@font-face {
-    font-family: "head-font";
-    src: url(/Assets/Fonts/Title-font.ttf);
-}
-
+@import url("//cdn.web-fonts.ge/fonts/bpg-arial-caps/css/bpg-arial-caps.min.css");
+@import url("//cdn.web-fonts.ge/fonts/bpg-glaho-arial/css/bpg-glaho-arial.min.css");
 
 /*---------------------------
 # Root
@@ -33,8 +25,8 @@
     --font-size-more-big: 35px;
 
     /*--------- Font family ---------*/
-    --base-font: "base-font", sans-serif;
-    --head-font: "head-font", sans-serif;
+    --base-font: "BPG Glaho Arial", sans-serif;
+    --head-font: "BPG Arial Caps", sans-serif;
 
     /*--------- Border radius ---------*/
     --radius-small: 5px;
