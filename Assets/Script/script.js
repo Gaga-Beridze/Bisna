@@ -1,9 +1,30 @@
 /*----------------------------------------------
 # Preloader
 ----------------------------------------------*/
-window.onload = function () {
-  document.querySelector('.preloader').style.display = 'none'
+
+/*---------------------------------
+# header
+---------------------------------*/
+const navbar = document.querySelector('.navbar')
+const scrollThreshold = 100
+
+function activateNavbar() {
+  navbar.classList.add('active')
 }
+
+function deactivateNavbar() {
+  navbar.classList.remove('active')
+}
+
+function handleScroll() {
+  if (window.scrollY > scrollThreshold) {
+    activateNavbar()
+  } else {
+    deactivateNavbar()
+  }
+}
+
+window.addEventListener('scroll', handleScroll)
 
 /*----------------------------------------------
 # Cookie System
@@ -151,53 +172,6 @@ fontsize_small.addEventListener('change', () => setFontSize('small'))
 fontsize_normall.addEventListener('change', () => setFontSize('normal'))
 fontsizeBig.addEventListener('change', () => setFontSize('big'))
 
-/* ----------------------------------------
-# ScrollBar 
------------------------------------------*/
-const lineBackground = document.createElement('div')
-lineBackground.classList.add('scrollbar-background')
-document.querySelector('.scrollbar').appendChild(lineBackground)
-
-const lineForeground = document.createElement('div')
-lineForeground.classList.add('scrollbar-foreground')
-document.querySelector('.scrollbar').appendChild(lineForeground)
-
-const line = document.querySelector('.scrollbar')
-
-window.addEventListener('scroll', function () {
-  const scrollPercent =
-    (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
-  lineForeground.style.width = `${scrollPercent}%`
-  lineForeground.style.opacity = 1
-  lineBackground.style.opacity = 1 - scrollPercent / 100
-})
-
-const scrollBarOn = document.getElementById('scrollbar-on'),
-  scrollBarOff = document.getElementById('scrollbar-off'),
-  scrollBar = document.querySelector('.scrollbar')
-
-scrollBarOn.addEventListener('change', () => {
-  scrollBar.classList.toggle('active')
-  setCookie('scrollBar', 'true', 365)
-  scroll = 'true'
-})
-
-scrollBarOff.addEventListener('click', () => {
-  scrollBar.classList.remove('active')
-  eraseCookie('scrollBar')
-  scroll = null
-})
-
-var scroll = getCookie('scrollBar')
-
-if (scroll === 'true') {
-  scrollBar.classList.add('active')
-  if (scrollBarOn.value === '1') {
-    scrollBarOn.checked = true
-    scrollBarOff.checked = false
-  }
-}
-
 /*----------------------------------------------
 # Dark & Light mode
 ----------------------------------------------*/
@@ -227,12 +201,26 @@ if (darkMode === 'true') {
 }
 
 /*---------------------------------
-#
+# Hero
 ---------------------------------*/
-
-/*---------------------------------
-#
----------------------------------*/
+var swiper = new Swiper('.hero', {
+  spaceBetween: 50,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: false,
+  },
+  autoplay: {
+    delay: 5000,
+  },
+})
 
 /*---------------------------------
 #
