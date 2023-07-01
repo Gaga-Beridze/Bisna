@@ -54,7 +54,7 @@ function eraseCookie(name) {
   document.cookie = name + '=; Max-Age=-99999999;'
 }
 
-var cookiePopup = document.getElementById('cookie-popup')
+var cookiePopup = document.querySelector('.cookie-container')
 var acceptButton = document.getElementById('accept-cookie')
 var learnMoreLink = document.getElementById('learn-more')
 
@@ -204,10 +204,10 @@ if (darkMode === 'true') {
 # Hero
 ---------------------------------*/
 var swiper = new Swiper('.hero', {
-  spaceBetween: 50,
+  spaceBetween: 10,
   effect: 'fade',
   fadeEffect: {
-    crossFade: true,
+    crossFade: false,
   },
   pagination: {
     el: '.swiper-pagination',
@@ -218,17 +218,84 @@ var swiper = new Swiper('.hero', {
     onlyInViewport: false,
   },
   autoplay: {
-    delay: 5000,
+    delay: 4000,
   },
 })
 
 /*---------------------------------
-#
+# services
 ---------------------------------*/
+var swiper = new Swiper('.services', {
+  effect: 'coverflow',
+  followFinger: true,
+  centeredSlides: true,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 300,
+    modifier: 1,
+    slideShadows: false,
+  },
+  autoplay: {
+    delay: 2000,
+    pauseOnMouseEnter: true,
+    waitForTransition: true,
+    disableOnInteraction: true,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    dynamicBullets: true,
+    clickable: true,
+  },
+  breakpoints: {
+    320: {
+      spaceBetween: 30,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
+    },
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 60,
+    },
+  },
+})
 
 /*---------------------------------
-#
+# popular tours
 ---------------------------------*/
+var swiper = new Swiper('.popular-tours', {
+  slidesPerView: 4,
+  effect: 'slide',
+  centeredSlides: true,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-button-prev',
+    prevEl: '.swiper-button-next',
+  },
+  breakpoints: {
+    320: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    640: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    768: {
+      centeredSlides: false,
+    },
+  },
+})
 
 /*---------------------------------
 #

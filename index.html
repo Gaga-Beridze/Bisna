@@ -357,14 +357,6 @@
     <div class="modal fade" id="search-menu" tabindex="-1" aria-labelledby="search-menuLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="search-menuLabel">
-                        <i class="fa-solid fa-magnifying-glass"></i> ძიება
-                    </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
                 <div class="modal-body">
                     <!-- Search Form -->
                     <form action="" method="get" class="search-menu">
@@ -375,23 +367,26 @@
                         <ul class="list-group popular-search-list">
                             <p class="title">ხშირად გამოყენებული ფრაზები</p>
 
-                            <a href="#">
+                            <a class="d-flex justify-content-center" href="#">
                                 <li class="list-group-item">ცვანდირის ტბები <i class="fa-solid fa-chevron-right"></i></li>
                             </a>
-                            <a href="#">
+                            <a class="d-flex justify-content-center" href="#">
                                 <li class="list-group-item">მთიულეთი <i class="fa-solid fa-chevron-right"></i></li>
                             </a>
-                            <a href="#">
+                            <a class="d-flex justify-content-center" href="#">
                                 <li class="list-group-item">ფშავი <i class="fa-solid fa-chevron-right"></i></li>
                             </a>
-                            <a href="#">
+                            <a class="d-flex justify-content-center" href="#">
                                 <li class="list-group-item">ძამას ხეობა <i class="fa-solid fa-chevron-right"></i></li>
                             </a>
-                            <a href="#">
+                            <a class="d-flex justify-content-center" href="#">
                                 <li class="list-group-item">თბილისი <i class="fa-solid fa-chevron-right"></i></li>
                             </a>
                         </ul>
                     </form>
+                </div>
+                <div class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">დახურვა</button>
                 </div>
             </div>
         </div>
@@ -403,22 +398,26 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide hero-item" style="background-image: url(Assets/Image/Hero/mtiuleti.jpg);">
                 <div class="hero-container">
+                    <!-- Image title and description -->
                     <div class="hero-content">
                         <h5>თბილისი</h5>
                         <p>თავად კომპანია ძალიან წარმატებული კომპანიაა. Მაგრამ ვის აინტერესებს? გქონდეს სიამოვნება და მსგავსი, მოიპოვო დიდი
                             მე აგიხსნით ნეტარი უხუცესების შრომატევად საქმეს, მართლაც, მათში სიმართლე არ არის.
                         </p>
+                        <!-- Hero link -->
                         <a href="#" class="btn btn-primary">დაწვრილებით&nbsp;&nbsp;<i class='bx bx-chevron-right-circle'></i></a>
                     </div>
                 </div>
             </div>
             <div class="swiper-slide hero-item" style="background-image: url(Assets/Image/Hero/tbilisi.jpg);">
                 <div class="hero-container">
+                    <!-- Image title and description -->
                     <div class="hero-content">
                         <h5>თბილისი</h5>
                         <p>თავად კომპანია ძალიან წარმატებული კომპანიაა. Მაგრამ ვის აინტერესებს? გქონდეს სიამოვნება და მსგავსი, მოიპოვო დიდი
                             მე აგიხსნით ნეტარი უხუცესების შრომატევად საქმეს, მართლაც, მათში სიმართლე არ არის.
                         </p>
+                        <!-- Hero link -->
                         <a href="#" class="btn btn-primary">დაწვრილებით&nbsp;&nbsp;<i class='bx bx-chevron-right-circle'></i></a>
                     </div>
                 </div>
@@ -429,30 +428,369 @@
     <!--========== Hero section end ==========-->
 
 
-    <!--========== ==========-->
-    <!--========== ==========-->
+    <!--========== services start ==========-->
+    <div class="container mt-5">
+        <div class="swiper services card-list-container">
+
+            <!-- services title -->
+            <div class="d-flex justify-content-center align-items-center  mb-3">
+                <h5>ტურისტული პროდუქტები</h5>
+            </div>
+
+            <div class="swiper-wrapper">
+                <!-- card 1 -->
+                <div class="swiper-slide">
+                    <a class="d-flex justify-content-center" href="#">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa-solid fa-bed"></i></h5>
+                                <p class="card-text">დაბინავება</p>
+                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- card 2 -->
+                <div class="swiper-slide">
+                    <a class="d-flex justify-content-center" href="#">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa-solid fa-burger"></i></h5>
+                                <p class="card-text">კვება</p>
+                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- card 3 -->
+                <div class="swiper-slide">
+                    <a class="d-flex justify-content-center" href="#">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa-solid fa-face-grin-hearts"></i></h5>
+                                <p class="card-text">გართობა</p>
+                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- card 4 -->
+                <div class="swiper-slide">
+                    <a class="d-flex justify-content-center" href="#">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa-solid fa-face-surprise"></i></h5>
+                                <p class="card-text">ექსტრემი & რეკრეაცია</p>
+                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- card 5 -->
+                <div class="swiper-slide">
+                    <a class="d-flex justify-content-center" href="#">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa-solid fa-person-half-dress"></i></h5>
+                                <p class="card-text">გიდები</p>
+                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- card 5 -->
+                <div class="swiper-slide">
+                    <a class="d-flex justify-content-center" href="#">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa-solid fa-truck-fast"></i></h5>
+                                <p class="card-text">ტრანსპორტირება</p>
+                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- card 6 -->
+                <div class="swiper-slide">
+                    <a class="d-flex justify-content-center" href="#">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa-solid fa-car"></i></h5>
+                                <p class="card-text">ავტოგაქირავება</p>
+                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="pagination">
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <!--========== services end ==========-->
 
 
-    <!--========== ==========-->
-    <!--========== ==========-->
+    <!--========== Popular tour start ==========-->
+    <div class="container mt-5">
+        <div class="swiper popular-tours card-list-container py-4">
+
+            <!-- popular tours title -->
+            <div class="d-flex justify-content-between align-items-center mb-3 container-title">
+                <h5>პოპულალური ტურები</h5>
+
+                <div class="swiper-buttons-list">
+                    <div class="swiper-button-prev"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="swiper-button-next"><i class="fa-solid fa-chevron-left"></i></div>
+                </div>
+            </div>
+
+            <div class="swiper-wrapper">
+                <!-- card 1 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Hero/mtiuleti.jpg" class="card-img-top" alt="...">
+                            <div class="price">$200</div>
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">ცხვანდირის ტბები</h5>
+                                </a>
+                                <p class="card-text">
+                                    საქართველოს ულამაზესი მაღალმთიანი ტბები და ხედები ოკუპირებულ აფხაზეთზე
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <p><i class="fa-solid fa-clock"></i> 2-3 დღე</p>
+                                <p class="d-flex">სირთულე: <span class="difficulty-level">A</span>
+                                    <!-- Difficulty -->
+                                    <button class="dif-btn" data-bs-toggle="modal" data-bs-target="#difA">?</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Hero/mtiuleti.jpg" class="card-img-top" alt="...">
+                            <div class="price">$200</div>
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">ცხომარეთი</h5>
+                                </a>
+                                <p class="card-text">
+                                    საქართველოს ულამაზესი მაღალმთიანი ტბები და ხედები ოკუპირებულ აფხაზეთზე
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <p><i class="fa-solid fa-clock"></i> 3-5 დღე</p>
+                                <p class="d-flex">სირთულე: <span class="difficulty-level">B1</span>
+                                    <!-- Difficulty -->
+                                    <button class="dif-btn" data-bs-toggle="modal" data-bs-target="#difB1">?</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Hero/tbilisi.jpg" class="card-img-top" alt="...">
+                            <div class="price">$200</div>
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">არგვეთი</h5>
+                                </a>
+                                <p class="card-text">
+                                    საქართველოს ულამაზესი მაღალმთიანი ტბები და ხედები ოკუპირებულ აფხაზეთზე
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <p><i class="fa-solid fa-clock"></i> 1-5 დღე</p>
+                                <p class="d-flex">სირთულე: <span class="difficulty-level">B2</span>
+                                    <!-- Difficulty -->
+                                    <button class="dif-btn" data-bs-toggle="modal" data-bs-target="#difB2">?</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Hero/alaverdi.jpeg" class="card-img-top" alt="...">
+                            <div class="price">$200</div>
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">ალავერდის ტაძარი</h5>
+                                </a>
+                                <p class="card-text">
+                                    საქართველოს ულამაზესი მაღალმთიანი ტბები და ხედები ოკუპირებულ აფხაზეთზე.
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <p><i class="fa-solid fa-clock"></i> 2-3 დღე</p>
+                                <p class="d-flex">სირთულე: <span class="difficulty-level">EX</span>
+                                    <!-- Difficulty -->
+                                    <button class="dif-btn" data-bs-toggle="modal" data-bs-target="#difEX">?</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Hero/Tbilisi.jpeg" class="card-img-top" alt="...">
+                            <div class="price">$200</div>
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">თბილისი</h5>
+                                </a>
+                                <p class="card-text">
+                                    საქართველოს ულამაზესი მაღალმთიანი ტბები და ხედები ოკუპირებულ აფხაზეთზე
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <p><i class="fa-solid fa-clock"></i> 2-3 დღე</p>
+                                <p class="d-flex">სირთულე: <span class="difficulty-level">B2</span>
+                                    <!-- Difficulty -->
+                                    <button class="dif-btn" data-bs-toggle="modal" data-bs-target="#difB2">?</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- tours page link -->
+        <div class=" d-flex justify-content-center algin-items-center">
+            <a href="#" class="btn btn-primary">მეტის ნახვა</a>
+        </div>
+    </div>
+    <!--========== Popular tour end ==========-->
 
 
 
 
 
 
+    <!--========== Difficulty list start ==========-->
+    <!-- Difficulty A -->
+    <div class="modal fade" id="difA" tabindex="-1" aria-labelledby="difALabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="difALabel">
+                        <i class="fa-solid fa-person-hiking"></i>&nbsp;&nbsp;A - მარტივი ექსკურსია
+                    </h1>
+                    <div></div>
+                </div>
+                <div class="modal-body">
+                    <p class="text-left">
+                        მოიცავს მარტივ სანახაობრივ მოგზაურობას. არ შეიცავს, ან უმნიშვნელო ოდენობით შეიცავს საფეხმავლო ელემენტებს.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">დახურვა</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Difficulty B1 -->
+    <div class="modal fade" id="difB1" tabindex="-1" aria-labelledby="difB1Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="difB1Label">
+                        <i class="fa-solid fa-person-hiking"></i>&nbsp;&nbsp;B-1 - მარტივი საფეხმავლო
+                    </h1>
+                    <div></div>
+                </div>
+                <div class="modal-body">
+                    <p>გულისხმობს ნაკლებად მძიმე ფიზიკურ დატვირთვას. შეიცავს ნაკლებად რთულ რელიეფზე / გარემო პირობებში გადაადგილებას.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">დახურვა</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Difficulty B2 -->
+    <div class="modal fade" id="difB2" tabindex="-1" aria-labelledby="difB2Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="difB2Label">
+                        <i class="fa-solid fa-person-hiking"></i>&nbsp;&nbsp;B-2 - რთული საფეხმავლო
+                    </h1>
+                    <div></div>
+                </div>
+                <div class="modal-body">
+                    <p>გულისხმობს მძიმე ფიზიკურ დატვირთვას. შეიცავს რთულ რელიეფზე / გარემო პირობებში გადაადგილებას.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">დახურვა</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Difficulty EX -->
+    <div class="modal fade" id="difEX" tabindex="-1" aria-labelledby="difEXLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="difEXLabel">
+                        <i class="fa-solid fa-person-hiking"></i>&nbsp;&nbsp;EX - ექსტრემალური საფეხმავლო
+                    </h1>
+                    <div></div>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        გულისხმობს მძიმე ფიზიკურ დატვირთვას. შეიცავს განსაკუთრებით რთულ რელიეფზე / გარემო პირობებში გადაადგილებას. მონაწილისგან
+                        მოითხოვს კარგ ფიზიკურ ფორმაში ყოფნას და რთულ საფეხმავლო ლაშქრობებში მონაწილეობის გამოცდილებას. მონაწილე ფიზიკურად და
+                        ფსიქოლოგიურად მზად უნდა იყოს მოსალოდნელი დაბრკოლებებისადმი. შესაძლოა შეიცავდეს გარკვეულ საფრთხეებს, რაზეც მონაწილე
+                        წინასწარ
+                        იქნება გაფრთხილებული.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">დახურვა</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--========== Difficulty list end ==========-->
 
     <!--========== Cookie start ==========-->
     <div class="cookie-container">
-        <div id="cookie-popup">
-            <p>
-                ჩვენ ვიყენებთ ქუქიებს, რათა გავაუმჯობესოთ <b>ბისნას</b> თქვენი
-                მოხმარებისთვის. ჩვენი ვებსაიტის გამოყენების გაგრძელებით თქვენ
-                ეთანხმებით ქუქიების გამოყენება.
-            </p>
-            <button id="accept-cookie">ვეთანხმები</button>
-            <a id="learn-more" href="#">ქუქიების შესახებ</a>
-        </div>
+        <p>
+            ჩვენ ვიყენებთ ქუქიებს, რათა გავაუმჯობესოთ <b>ბისნას</b> თქვენი
+            მოხმარებისთვის. ჩვენი ვებსაიტის გამოყენების გაგრძელებით თქვენ
+            ეთანხმებით ქუქიების გამოყენება.
+        </p>
+        <!-- accept button -->
+        <button id="accept-cookie">ვეთანხმები</button>
+        <!-- about cookie -->
+        <a id="learn-more" href="#">ქუქიების შესახებ</a>
     </div>
     <!--========== Cookie end ==========-->
 
