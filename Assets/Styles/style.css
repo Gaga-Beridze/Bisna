@@ -87,8 +87,8 @@ body {
 }
 
 body.dark {
-    --bg-color-1: #212224;
-    --bg-color-2: #1a1a1a;
+    --bg-color-1: hsl(219, 4%, 7%);
+    --bg-color-2: hsl(219, 4%, 4%);
     --txt-color: #fff;
     --bg-glass: #2e2e2e81;
     --txt-color-2: #d6d6d6;
@@ -219,13 +219,22 @@ h6 {
 }
 
 /*--------------------------------------
-# cards
+# Cards
 --------------------------------------*/
 .card {
     border: none;
     background-color: var(--bg-color-1);
     color: var(--txt-color);
     border-radius: var(--radius-huge);
+}
+
+.card img {
+    max-height: 200px;
+    min-height: 200px;
+    border-radius: var(--radius-huge);
+    object-fit: cover;
+    object-position: center;
+    padding: 5px;
 }
 
 .card-footer {
@@ -238,6 +247,7 @@ h6 {
     color: var(--txt-color-2);
     font-size: var(--font-size-small);
 }
+
 
 /*---------------------------
 # Offcanvas
@@ -484,6 +494,10 @@ h6 {
     color: #fff;
 }
 
+.swiper-slide {
+    width: auto;
+}
+
 
 /*--------------------------------------
 # Nex and prev buttons
@@ -509,11 +523,11 @@ header {
     position: fixed;
     width: 100%;
     transition: var(--transition-3);
+    background-color: var(--bg-color-1);
 }
 
 .navbar.active {
     box-shadow: rgba(0, 0, 0, 0.082) 0px 7px 29px 0px;
-    background-color: var(--bg-color-1);
 }
 
 .navbar-nav {
@@ -711,7 +725,6 @@ header {
 }
 
 .popular-search-list li {
-    background-color: var(--bg-color-1);
     border: none;
     font-size: var(--font-size-small);
     margin: .2rem 0;
@@ -720,9 +733,23 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: transparent;
+}
+
+.popular-search-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 20px;
+    border-radius: var(--radius-big);
+    margin-top: 10px;
 }
 
 .popular-search-list a:hover li {
+    color: #fff;
+}
+
+.popular-search-list a:hover {
     background-color: var(--main-color);
     color: #fff;
 }
@@ -932,7 +959,7 @@ label {
 
 .cookie-container p {
     color: var(--txt-color);
-    font-family: var(--head-font);
+    font-family: var(--base-font-font);
 }
 
 #accept-cookie {
@@ -1045,10 +1072,6 @@ label {
 /*--------------------------------------
 # Popular tours
 --------------------------------------*/
-.popular-tours .swiper-slide {
-    width: auto;
-}
-
 .popular-tours .card {
     box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
     transition: var(--transition-3);
@@ -1067,15 +1090,6 @@ label {
     transition: var(--transition-3);
 }
 
-.popular-tours .card img {
-    max-height: 200px;
-    min-height: 200px;
-    border-radius: var(--radius-huge);
-    object-fit: cover;
-    object-position: center;
-    padding: 5px;
-}
-
 .popular-tours .card .price {
     position: absolute;
     top: 0;
@@ -1086,6 +1100,101 @@ label {
     padding: 2px 15px;
     border-radius: var(--radius-medium);
 }
+
+/*--------------------------------------
+# Popular places
+--------------------------------------*/
+.popular-place .card {
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    transition: var(--transition-3);
+}
+
+.popular-place .card:hover {
+    transform: translateY(-10px);
+}
+
+/*--------------------------------------
+# Guides section
+--------------------------------------*/
+.guides-section .card img {
+    max-width: 150px;
+    min-width: 150px;
+    min-height: 150px;
+    max-height: 150px;
+    margin: auto;
+    border: 2px solid var(--main-color);
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border-radius: var(--radius-round);
+}
+
+.guides-section .card .card-title,
+.guides-section .card .card-text {
+    text-align: center;
+}
+
+.guides-section .card {
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    transition: var(--transition-3);
+}
+
+.guides-section .card:hover {
+    transform: scale(1.04);
+}
+
+/*--------------------------------------
+# car rent section
+--------------------------------------*/
+.car-rent-section .card {
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    transition: var(--transition-3);
+}
+
+.car-rent-section .card:hover {
+    transform: scale(1.04);
+}
+
+.footer {
+    background-color: var(--bg-color-1);
+}
+
+
+/*--------------------------------------
+# add your product
+--------------------------------------*/
+/* .add-your-product img {
+    max-width: 150px;
+    min-width: 150px;
+    min-height: 150px;
+    max-height: 150px;
+    margin: auto;
+    border: 2px solid var(--main-color);
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border-radius: var(--radius-round);
+}
+
+.add-your-product .add-icon {
+    position: relative;
+    top: -10px;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    width: 45px;
+    display: flex;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    border: 27px solid var(--bg-color-1);
+    border-radius: 50%;
+    color: var(--main-color);
+}
+
+.add-your-product .card-text {
+    font-family: var(--head-font);
+    color: var(--main-color);
+} */
 
 /*--------------------------------------
 # Difficulty levels

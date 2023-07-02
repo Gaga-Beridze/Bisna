@@ -249,11 +249,9 @@ var swiper = new Swiper('.services', {
   },
   breakpoints: {
     320: {
-      spaceBetween: 30,
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true,
-      },
+      spaceBetween: 60,
+      effect: 'coverflow',
+      slidesPerView: 'auto',
     },
     640: {
       slidesPerView: 1,
@@ -298,5 +296,86 @@ var swiper = new Swiper('.popular-tours', {
 })
 
 /*---------------------------------
-#
+# Popular places
 ---------------------------------*/
+var swiper = new Swiper('.popular-place', {
+  effect: 'slide',
+  slidesPerView: 4,
+  spaceBetween: 10,
+  breakpoints: {
+    320: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    640: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    768: {
+      slidesPerView: 'auto',
+      centeredSlides: false,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 10,
+    },
+  },
+  navigation: {
+    nextEl: '.swiper-button-prev',
+    prevEl: '.swiper-button-next',
+  },
+})
+
+/*---------------------------------
+# guides section
+---------------------------------*/
+var swiper = new Swiper('.guides-section', {
+  effect: 'slide',
+  slidesPerView: 4,
+  centeredSlides: true,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-button-prev',
+    prevEl: '.swiper-button-next',
+  },
+  breakpoints: {
+    320: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    640: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    768: {
+      centeredSlides: false,
+    },
+  },
+})
+
+/*---------------------------------
+# car rent section
+---------------------------------*/
+var swiper = new Swiper('.car-rent-section', {
+  effect: 'slide',
+  slidesPerView: 4,
+  centeredSlides: false,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-button-prev',
+    prevEl: '.swiper-button-next',
+  },
+  breakpoints: {
+    320: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    640: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    768: {
+      centeredSlides: false,
+    },
+  },
+})
