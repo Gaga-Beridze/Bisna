@@ -37,10 +37,10 @@
     --radius-round: 50%;
 
     /*--------- Transition ---------*/
-    --transition-3: .3s ease;
-    --transition-4: .4s ease;
-    --transition-5: .5s ease;
-    --transition-6: .6s ease;
+    --transition-3: .3s;
+    --transition-4: .4s;
+    --transition-5: .5s;
+    --transition-6: .6s;
 
     /*--------- Bootstrap ---------*/
     --bs-dropdown-link-active-bg: #00af83 !important;
@@ -622,7 +622,7 @@ header {
 }
 
 .lang-btn {
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--bg-color-2);
     border-radius: var(--radius-huge);
     padding: 5px;
     display: flex;
@@ -631,7 +631,7 @@ header {
 
 .lang-btn:hover,
 .lang-btn:focus {
-    border: 1px solid var(--main-color-hover) !important;
+    border: 1px solid var(--main-color) !important;
     background-color: var(--bg-color-2);
 }
 
@@ -696,8 +696,8 @@ header {
 }
 
 .nav-btn:hover {
-    background-color: var(--main-color);
-    color: #fff;
+    background-color: var(--bg-color-2);
+    color: var(--main-color);
 }
 
 .nav-btn:first-of-type {
@@ -772,6 +772,7 @@ header {
 .search-menu input:focus {
     border: 1px solid var(--main-color) !important;
     background-color: var(--bg-color-2);
+    border-radius: var(--radius-medium);
 }
 
 /*---------------------------
@@ -1116,7 +1117,7 @@ label {
 /*--------------------------------------
 # Guides section
 --------------------------------------*/
-.guides-section .card img {
+.guides-section .card .card-img-top {
     max-width: 150px;
     min-width: 150px;
     min-height: 150px;
@@ -1158,11 +1159,74 @@ label {
     background-color: var(--bg-color-1);
 }
 
+/*--------------------------------------
+# Food card Section
+--------------------------------------*/
+.food-section .card {
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    transition: var(--transition-3);
+}
+
+.food-section .card:hover {
+    transform: scale(1.04);
+}
+
+/*--------------------------------------
+# Hotel card Section
+--------------------------------------*/
+.hotel-section .card {
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    transition: var(--transition-3);
+}
+
+.hotel-section .card:hover {
+    transform: scale(1.04);
+}
+
+/*--------------------------------------
+# Extrem card Section
+--------------------------------------*/
+.extrem-section .card {
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    transition: var(--transition-3);
+}
+
+.extrem-section .card:hover {
+    transform: scale(1.04);
+}
+
+/*--------------------------------------
+# Entertainment card Section
+--------------------------------------*/
+.entertainment-section .card {
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    transition: var(--transition-3);
+}
+
+.entertainment-section .card:hover {
+    transform: scale(1.04);
+}
+
+
+/*--------------------------------------
+# Call to Action
+--------------------------------------*/
+.cta {
+    background-color: var(--bg-color-1);
+    border-radius: var(--radius-big);
+    color: var(--txt-color);
+}
+
+
 
 /*--------------------------------------
 # add your product
 --------------------------------------*/
-/* .add-your-product img {
+.add-your-product .img-main-div {
+    display: grid;
+}
+
+.add-your-product img {
     max-width: 150px;
     min-width: 150px;
     min-height: 150px;
@@ -1194,7 +1258,7 @@ label {
 .add-your-product .card-text {
     font-family: var(--head-font);
     color: var(--main-color);
-} */
+}
 
 /*--------------------------------------
 # Difficulty levels

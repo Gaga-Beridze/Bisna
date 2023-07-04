@@ -379,3 +379,138 @@ var swiper = new Swiper('.car-rent-section', {
     },
   },
 })
+
+/*---------------------------------
+# car rent section
+---------------------------------*/
+var swiper = new Swiper('.car-rent-section', {
+  effect: 'slide',
+  slidesPerView: 4,
+  centeredSlides: false,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-button-prev',
+    prevEl: '.swiper-button-next',
+  },
+  breakpoints: {
+    320: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    640: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    768: {
+      centeredSlides: false,
+    },
+  },
+})
+
+/*---------------------------------
+# Food section
+---------------------------------*/
+var swiper = new Swiper('.food-section', {
+  effect: 'slide',
+  slidesPerView: 4,
+  centeredSlides: false,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-button-prev',
+    prevEl: '.swiper-button-next',
+  },
+  breakpoints: {
+    320: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    640: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    768: {
+      centeredSlides: false,
+    },
+  },
+})
+
+/*---------------------------------
+# Hotel section
+---------------------------------*/
+var swiper = new Swiper('.hotel-section', {
+  effect: 'slide',
+  slidesPerView: 4,
+  centeredSlides: false,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-button-prev',
+    prevEl: '.swiper-button-next',
+  },
+  breakpoints: {
+    320: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    640: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    768: {
+      centeredSlides: false,
+    },
+  },
+})
+
+/*---------------------------------
+# Extrem section
+---------------------------------*/
+var swiper = new Swiper('.extrem-section', {
+  effect: 'slide',
+  slidesPerView: 4,
+  centeredSlides: false,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-button-prev',
+    prevEl: '.swiper-button-next',
+  },
+  breakpoints: {
+    320: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    640: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    768: {
+      centeredSlides: false,
+    },
+  },
+})
+
+/*---------------------------------
+# Entertainment section
+---------------------------------*/
+var swiper = new Swiper('.entertainment-section', {
+  effect: 'slide',
+  slidesPerView: 4,
+  centeredSlides: false,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-button-prev',
+    prevEl: '.swiper-button-next',
+  },
+  breakpoints: {
+    320: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    640: {
+      centeredSlides: false,
+      slidesPerView: 'auto',
+    },
+    768: {
+      centeredSlides: false,
+    },
+  },
+})
