@@ -23,11 +23,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css"
         integrity="sha512-Jp3oCtkKo8j/WRrHq2jrYMtJogclQybtR6+81arCLTO/TvWj3oaF4NkZQs2bTqWJ8An8L2MLKKfvsn3H8vZP1g==" crossorigin="anonymous"
         referrerpolicy="no-referrer" />
+
     <!-- Bootstrap 5.3.0 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!-- Swiper JS 9.3.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- AOS 2.3.1-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!--=========== Main CSS Link ===========-->
     <link rel="stylesheet" href="Assets/Styles/style.css">
@@ -349,17 +352,62 @@
                         </div>
                     </div>
                 </div>
+
+                <!------------ Sound button start ------------>
+                <div class="settings-item mt-2">
+                    <div class="settings-header">
+                        <!-- Item title -->
+                        <div class="align-items-center mb-2">
+                            <div>
+                                <div class="settings-header-icon">
+                                    <i class="fa-solid fa-bell"></i>
+                                </div>
+                                ხმის მართვა
+                            </div>
+                        </div>
+                        <!-- Item description -->
+                        <p>
+                            შესაძლოა ვებ-გვერდზე არსებული შეტყობინების ხმები თქვენთვის
+                            დისკომფორტი აღმოჩნდეს, ამიტომ თქვენ შეგიძლიათ მართოთ იგი.
+                        </p>
+                    </div>
+
+                    <div class="mt-3">
+                        <!-- Border none mode switch -->
+                        <div class="settings-switch">
+                            <label class="d-flex justify-content-between align-items-center" for="sound-on">
+                                <p>ხმის ჩართვა</p>
+                                <input class="form-check-input" value="0" type="radio" name="sound" id="sound-on" checked />
+                            </label>
+                        </div>
+                        <!-- Bordered mode switch -->
+                        <div class="settings-switch">
+                            <label class="d-flex justify-content-between align-items-center" for="sound-off">
+                                <p>ხმის გამორთვა</p>
+                                <input class="form-check-input" value="1" type="radio" name="sound" id="sound-off" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!------------ Sound button end ------------>
             </div>
         </div>
     </div>
     <!--========== Settings Menu end ==========-->
+
+    <!--------------- Internet detector start --------------->
+    <h1 class="d-none">ინტერნეტ სტატუსი: <span id="status">უცნობი</span></h1>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3 internet-toast"></div>
+    <audio id="internet-connection-sound" src="Assets/Audio/Notification.mp3"></audio>
+    <!--------------- Internet detector end --------------->
 
     <!--========== Favourite List Start ==========-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="fa-solid fa-bookmark"></i> შენახული</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="fa-solid fa-bookmark"></i> შენახული
+                    </h1>
                     <div></div>
                 </div>
                 <div class="modal-body">
@@ -426,7 +474,8 @@
                     <!-- Image title and description -->
                     <div class="hero-content">
                         <h5>თბილისი</h5>
-                        <p>თავად კომპანია ძალიან წარმატებული კომპანიაა. Მაგრამ ვის აინტერესებს? გქონდეს სიამოვნება და მსგავსი, მოიპოვო დიდი
+                        <p>თავად კომპანია ძალიან წარმატებული კომპანიაა. Მაგრამ ვის აინტერესებს? გქონდეს სიამოვნება და
+                            მსგავსი, მოიპოვო დიდი
                             მე აგიხსნით ნეტარი უხუცესების შრომატევად საქმეს, მართლაც, მათში სიმართლე არ არის.
                         </p>
                         <!-- Hero link -->
@@ -434,12 +483,13 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide hero-item" style="background-image: url(Assets/Image/Hero/tbilisi.jpg);">
+            <div class="swiper-slide hero-item" style="background-image: url(Assets/Image/Hero/cxvandiri.jpg);">
                 <div class="hero-container">
                     <!-- Image title and description -->
                     <div class="hero-content">
                         <h5>თბილისი</h5>
-                        <p>თავად კომპანია ძალიან წარმატებული კომპანიაა. Მაგრამ ვის აინტერესებს? გქონდეს სიამოვნება და მსგავსი, მოიპოვო დიდი
+                        <p>თავად კომპანია ძალიან წარმატებული კომპანიაა. Მაგრამ ვის აინტერესებს? გქონდეს სიამოვნება და
+                            მსგავსი, მოიპოვო დიდი
                             მე აგიხსნით ნეტარი უხუცესების შრომატევად საქმეს, მართლაც, მათში სიმართლე არ არის.
                         </p>
                         <!-- Hero link -->
@@ -452,112 +502,244 @@
     </div>
     <!--========== Hero section end ==========-->
 
+    <!--================ scheduled tours start ================-->
+    <div class="container mt-5" data-aos="fade-up">
+        <div class="swiper scheduled-tours card-list-container py-4">
 
-    <!--========== services start ==========-->
-    <div class="container mt-5">
-        <div class="swiper services card-list-container">
+            <!-- scheduled tours Section title -->
+            <div class="d-flex justify-content-between align-items-center mb-3 container-title">
+                <h5>2023 წლის დაგეგმილი ტურები</h5>
 
-            <!-- services title -->
-            <div class="d-flex justify-content-center align-items-center  mb-3">
-                <h5>ტურისტული პროდუქტები</h5>
+                <div class="swiper-buttons-list">
+                    <div class="swiper-button-prev"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="swiper-button-next"><i class="fa-solid fa-chevron-left"></i></div>
+                </div>
             </div>
 
             <div class="swiper-wrapper">
                 <!-- card 1 -->
                 <div class="swiper-slide">
-                    <a class="d-flex justify-content-center" href="#">
-                        <div class="card">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Entertainment/1.jpeg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title"><i class="fa-solid fa-bed"></i></h5>
-                                <p class="card-text">დაბინავება</p>
-                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">დისკოტეკა</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> ზესტაფონი</p>
+                                </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
+
                 <!-- card 2 -->
                 <div class="swiper-slide">
-                    <a class="d-flex justify-content-center" href="#">
-                        <div class="card">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Entertainment/2.jpeg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title"><i class="fa-solid fa-burger"></i></h5>
-                                <p class="card-text">კვება</p>
-                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">ბარი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> მთიულეთი</p>
+                                </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
+
                 <!-- card 3 -->
                 <div class="swiper-slide">
-                    <a class="d-flex justify-content-center" href="#">
-                        <div class="card">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Entertainment/3.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title"><i class="fa-solid fa-face-grin-hearts"></i></h5>
-                                <p class="card-text">გართობა</p>
-                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">ბილიარდი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> ქართლი</p>
+                                </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
+
                 <!-- card 4 -->
                 <div class="swiper-slide">
-                    <a class="d-flex justify-content-center" href="#">
-                        <div class="card">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Entertainment/4.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title"><i class="fa-solid fa-face-surprise"></i></h5>
-                                <p class="card-text">ექსტრემი & რეკრეაცია</p>
-                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">ბოულინგი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> რაჭა</p>
+                                </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
+
                 <!-- card 5 -->
                 <div class="swiper-slide">
-                    <a class="d-flex justify-content-center" href="#">
-                        <div class="card">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Entertainment/5.jpeg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title"><i class="fa-solid fa-person-half-dress"></i></h5>
-                                <p class="card-text">გიდები</p>
-                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">დარტსი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> აჭარა</p>
+                                </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                <!-- card 5 -->
-                <div class="swiper-slide">
-                    <a class="d-flex justify-content-center" href="#">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title"><i class="fa-solid fa-truck-fast"></i></h5>
-                                <p class="card-text">ტრანსპორტირება</p>
-                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+
                 <!-- card 6 -->
                 <div class="swiper-slide">
-                    <a class="d-flex justify-content-center" href="#">
-                        <div class="card">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Entertainment/6.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title"><i class="fa-solid fa-car"></i></h5>
-                                <p class="card-text">ავტოგაქირავება</p>
-                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">პინგ-პონგი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> სამეგრელო</p>
+                                </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
-            </div>
-            <div class="pagination">
-                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
-    <!--========== services end ==========-->
 
+    <!-- scheduled tours page link -->
+    <div class=" d-flex justify-content-center algin-items-center">
+        <a href="#" class="btn btn-primary">მეტის ნახვა</a>
+    </div>
+    </div>
+    <!--================ scheduled tours end ================-->
+
+    <!--================ news section start ================-->
+    <section id="news" class="news mb-5 mt-5" data-aos="fade-up-right">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title text-center">
+                <h4>სიახლეები</h4>
+            </div>
+
+            <div class="row mt-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 mb-5 mb-lg-0 news-container">
+                    <ul class="nav nav-tabs flex-column mb-5">
+                        <li class="nav-item">
+                            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+                                <h4>ბისნას ინფრასტრუქტურული ბიზნეს პროექტი</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+                                <h4>ბისნამ უკრაინელი ბავშვებისთვის ექსკურსიები მოაწყო</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+                                <h4>ცხვანდირის ტბებზე უფასო ტურები გამოცხადდა</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+                                <h4>ბისნა აფდეითის პროცესშია</h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-8 pl-5">
+                    <div class="tab-content">
+                        <div class="tab-pane active show" id="tab-1">
+                            <h6>ბისნას ინფრასტრუქტურული ბიზნეს პროექტი</h6>
+                            <img src="Assets/Image/Hotel/4.jpg" alt="" class="img-fluid">
+                            <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
+                                ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet
+                                eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus
+                                nostrum rem vero</p>
+                        </div>
+                        <div class="tab-pane" id="tab-2">
+                            <h6>ბისნამ უკრაინელი ბავშვებისთვის ექსკურსიები მოაწყო</h6>
+                            <img src="Assets/Image/Hotel/3.jpg" alt="" class="img-fluid">
+                            <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
+                                ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet
+                                eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus
+                                nostrum rem vero</p>
+                        </div>
+                        <div class="tab-pane" id="tab-3">
+                            <h6>ცხვანდირის ტბებზე უფასო ტურები გამოცხადდა</h6>
+                            <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
+                                ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet
+                                eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus
+                                nostrum rem vero</p>
+                        </div>
+                        <div class="tab-pane" id="tab-4">
+                            <h6>ბისნა აფდეითის პროცესშია</h6>
+                            <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
+                                ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet
+                                eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus
+                                nostrum rem vero</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--================ news Section end ================-->
 
     <!--========== Popular tour start ==========-->
-    <div class="container mt-5">
+    <div class="container mt-5" data-aos="fade-up">
         <div class="swiper popular-tours card-list-container py-4">
 
             <!-- popular tours title -->
@@ -627,7 +809,7 @@
                 <div class="swiper-slide">
                     <div class="d-flex justify-content-center">
                         <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Hero/tbilisi.jpg" class="card-img-top" alt="...">
+                            <img src="Assets/Image/Hero/cxvandiri.jpg" class="card-img-top" alt="...">
                             <div class="price">$200</div>
                             <div class="card-body">
                                 <!-- Link -->
@@ -661,7 +843,7 @@
                                     <h6 class="card-title">ალავერდის ტაძარი</h5>
                                 </a>
                                 <p class="card-text">
-                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth....
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth... .
                                 </p>
                             </div>
                             <div class="card-footer d-flex justify-content-between">
@@ -679,7 +861,7 @@
                 <div class="swiper-slide">
                     <div class="d-flex justify-content-center">
                         <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Hero/Tbilisi.jpeg" class="card-img-top" alt="...">
+                            <img src="Assets/Image/Hero/cxvandiri.jpg" class="card-img-top" alt="...">
                             <div class="price">$200</div>
                             <div class="card-body">
                                 <!-- Link -->
@@ -710,8 +892,9 @@
     </div>
     <!--========== Popular tour end ==========-->
 
+
     <!--========== Popular places start ==========-->
-    <div class="container mt-5">
+    <div class="container mt-5" data-aos="fade-up">
         <div class="swiper popular-place py-4">
 
             <!-- popular places title -->
@@ -813,14 +996,14 @@
                 <div class="swiper-slide">
                     <div class="d-flex justify-content-center">
                         <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Hero/Tbilisi.jpeg" class="card-img-top" alt="...">
+                            <img src="Assets/Image/Hero/cxvandiri.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <!-- Link -->
                                 <a href="#">
                                     <h6 class="card-title">აფხაზეთის ტბები</h5>
                                 </a>
                                 <p class="card-text">
-                                    საქართველოს ულამაზესი ტბები და ასევე სხვადასხვა სანახაობრივი საღამო...
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
                                 </p>
                             </div>
                             <div class="card-footer d-flex justify-content-between">
@@ -882,469 +1065,122 @@
     <!--========== Popular places end ==========-->
 
 
-    <!--================ guides section start ================-->
-    <div class="container mt-5">
-        <div class="swiper guides-section card-list-container py-4">
 
-            <!-- guides title -->
-            <div class="d-flex justify-content-between align-items-center mb-3 container-title">
-                <h5>გიდები</h5>
+    <!--========== services start ==========-->
+    <div class="container mt-5" data-aos="zoom-in-up">
+        <div class="swiper services card-list-container">
 
-                <div class="swiper-buttons-list">
-                    <div class="swiper-button-prev"><i class="fa-solid fa-chevron-right"></i></div>
-                    <div class="swiper-button-next"><i class="fa-solid fa-chevron-left"></i></div>
-                </div>
+            <!-- services title -->
+            <div class="d-flex justify-content-center align-items-center  mb-3">
+                <h5>ტურისტული პროდუქტები</h5>
             </div>
 
             <div class="swiper-wrapper">
                 <!-- card 1 -->
                 <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Guide/naniko.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">ნანიკო სუბელიანი</h5>
-                                </a>
-                                <p class="card-text">
-                                    <b>ტიპი:</b> კულტურული, საფეხმავლო...
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <p><b>ენები:</b> Geo, Eng, Rus</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 2 -->
-                <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Guide/zura.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">ზურა ნაცვლიშვილი</h5>
-                                </a>
-                                <p class="card-text">
-                                <p><b>ტიპი:</b> საფეხმავლო, კულტურული...</p>
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <p><b>ენები: </b> Geo, Eng, Rus</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 3 -->
-                <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Guide/jumberi.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">ჯუმბერი ბერიძე</h5>
-                                </a>
-                                <p class="card-text">
-                                <p><b>ტიპი:</b> საფეხმავლო, კულტურული...</p>
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <p><b>ენები: </b> Geo, Eng, Rus</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 4 -->
-                <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Guide/pavle.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">პავლე რევაზიშვილი</h5>
-                                </a>
-                                <p class="card-text">
-                                <p><b>ტიპი:</b> საფეხმავლო, კულტურული...</p>
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <p><b>ენები: </b> Geo, Eng, Rus</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Add your product -->
-                <div class="swiper-slide">
                     <a class="d-flex justify-content-center" href="#">
-                        <div class="card add-your-product" style="width: 18rem;">
-                            <div class="img-main-div">
-                                <img src="Assets/Image/vector_art/user.png" class="card-img-top" alt="...">
-                                <div class="add-icon"><i class="fa-solid fa-circle-plus"></i></div>
-                            </div>
+                        <div class="card">
                             <div class="card-body">
-                                <p class="card-text text-center">
-                                    ატვირთეთ თქვენი პროდუქტი
-                                </p>
+                                <h5 class="card-title"><i class="fa-solid fa-bed"></i></h5>
+                                <p class="card-text">
+                                    დაბინავება</p>
+                                <p class="card-second-text">მ
+                                    ოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
                             </div>
                         </div>
                     </a>
                 </div>
-
-            </div>
-        </div>
-
-        <!-- guides page link -->
-        <div class=" d-flex justify-content-center algin-items-center">
-            <a href="#" class="btn btn-primary">მეტის ნახვა</a>
-        </div>
-    </div>
-    <!--================ guides section end ================-->
-
-    <!--================ Car rent section start ================-->
-    <div class="container mt-5">
-        <div class="swiper car-rent-section card-list-container py-4">
-
-            <!-- car rent title -->
-            <div class="d-flex justify-content-between align-items-center mb-3 container-title">
-                <h5>ავტოგაქირავება</h5>
-
-                <div class="swiper-buttons-list">
-                    <div class="swiper-button-prev"><i class="fa-solid fa-chevron-right"></i></div>
-                    <div class="swiper-button-next"><i class="fa-solid fa-chevron-left"></i></div>
-                </div>
-            </div>
-
-            <div class="swiper-wrapper">
-                <!-- card 1 -->
-                <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/CarRent/Delica.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">Mitchubishi Delika</h5>
-                                </a>
-                                <p class="card-text">
-                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <div>
-                                    <p><i class="ri-steering-2-line"></i> მარცხნივ</p>
-                                </div>
-                                <div>
-                                    <p><i class="fa-solid fa-gas-pump"></i> დიზელი</p>
-                                </div>
-                                <div>
-                                    <p><i class="fa-solid fa-calendar-days"></i> 2015</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- card 2 -->
                 <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/CarRent/Delika.jpg" class="card-img-top" alt="...">
+                    <a class="d-flex justify-content-center" href="#">
+                        <div class="card">
                             <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">Mitchubishi Delica</h5>
-                                </a>
+                                <h5 class="card-title"><i class="fa-solid fa-burger"></i></h5>
                                 <p class="card-text">
-                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <div>
-                                    <p><i class="ri-steering-2-line"></i> მარჯვნივ</p>
-                                </div>
-                                <div>
-                                    <p><i class="fa-solid fa-gas-pump"></i> გაზი</p>
-                                </div>
-                                <div>
-                                    <p><i class="fa-solid fa-calendar-days"></i> 2013</p>
-                                </div>
+                                    კვება</p>
+                                <p class="card-second-text">მ
+                                    ოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-
                 <!-- card 3 -->
                 <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/CarRent/mazda.jpeg" class="card-img-top" alt="...">
+                    <a class="d-flex justify-content-center" href="#">
+                        <div class="card">
                             <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">Mazda e440</h5>
-                                </a>
+                                <h5 class="card-title"><i class="fa-solid fa-face-grin-hearts"></i></h5>
                                 <p class="card-text">
-                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <div>
-                                    <p><i class="ri-steering-2-line"></i> მარჯვნივ</p>
-                                </div>
-                                <div>
-                                    <p><i class="fa-solid fa-gas-pump"></i> ბენზინი</p>
-                                </div>
-                                <div>
-                                    <p><i class="fa-solid fa-calendar-days"></i> 2017</p>
-                                </div>
+                                    გართობა</p>
+                                <p class="card-second-text">მ
+                                    ოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-
                 <!-- card 4 -->
                 <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/CarRent/jeep.jpeg" class="card-img-top" alt="...">
+                    <a class="d-flex justify-content-center" href="#">
+                        <div class="card">
                             <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">JEEP rubicon</h5>
-                                </a>
+                                <h5 class="card-title"><i class="fa-solid fa-face-surprise"></i></h5>
                                 <p class="card-text">
-                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <div>
-                                    <p><i class="ri-steering-2-line"></i> მარცხნივ</p>
-                                </div>
-                                <div>
-                                    <p><i class="fa-solid fa-gas-pump"></i> დიზელი</p>
-                                </div>
-                                <div>
-                                    <p><i class="fa-solid fa-calendar-days"></i> 2012</p>
-                                </div>
+                                    ექსტრემი & რეკრეაცია</p>
+                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-
                 <!-- card 5 -->
                 <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/CarRent/volvo.jpg" class="card-img-top" alt="...">
+                    <a class="d-flex justify-content-center" href="#">
+                        <div class="card">
                             <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">Volvo</h5>
-                                </a>
+                                <h5 class="card-title"><i class="fa-solid fa-person-half-dress"></i></h5>
                                 <p class="card-text">
-                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <div>
-                                    <p><i class="ri-steering-2-line"></i> მარცხნივ</p>
-                                </div>
-                                <div>
-                                    <p><i class="fa-solid fa-gas-pump"></i> დიზელი</p>
-                                </div>
-                                <div>
-                                    <p><i class="fa-solid fa-calendar-days"></i> 2012</p>
-                                </div>
+                                    გიდები</p>
+                                <p class="card-second-text">მ
+                                    ოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-
-            </div>
-        </div>
-
-        <!-- car rent page link -->
-        <div class=" d-flex justify-content-center algin-items-center">
-            <a href="#" class="btn btn-primary">მეტის ნახვა</a>
-        </div>
-    </div>
-    <!--================ Car rent section end ================-->
-
-
-    <!--================ Food section start ================-->
-    <div class="container mt-5">
-        <div class="swiper food-section card-list-container py-4">
-
-            <!-- Food Section title -->
-            <div class="d-flex justify-content-between align-items-center mb-3 container-title">
-                <h5>კვება</h5>
-
-                <div class="swiper-buttons-list">
-                    <div class="swiper-button-prev"><i class="fa-solid fa-chevron-right"></i></div>
-                    <div class="swiper-button-next"><i class="fa-solid fa-chevron-left"></i></div>
-                </div>
-            </div>
-
-            <div class="swiper-wrapper">
-                <!-- card 1 -->
-                <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Food/1.webp" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">რამე რესტორანი</h5>
-                                </a>
-                                <p class="card-text">
-                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <div>
-                                    <p><i class="fa-solid fa-location-dot"></i> შატილი</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 2 -->
-                <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Food/2.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">კვების ობიექტი</h5>
-                                </a>
-                                <p class="card-text">
-                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <div>
-                                    <p><i class="fa-solid fa-location-dot"></i> გურია</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 3 -->
-                <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Food/3.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">რამე რესტორანი</h5>
-                                </a>
-                                <p class="card-text">
-                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <div>
-                                    <p><i class="fa-solid fa-location-dot"></i> თელავი</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 4 -->
-                <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Food/4.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">კვების ობიექტი</h5>
-                                </a>
-                                <p class="card-text">
-                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <div>
-                                    <p><i class="fa-solid fa-location-dot"></i> საჩხერე</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- card 5 -->
                 <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Food/5.webp" class="card-img-top" alt="...">
+                    <a class="d-flex justify-content-center" href="#">
+                        <div class="card">
                             <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">რამე რესტორანი</h5>
-                                </a>
+                                <h5 class="card-title"><i class="fa-solid fa-truck-fast"></i></h5>
                                 <p class="card-text">
-                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <div>
-                                    <p><i class="fa-solid fa-location-dot"></i> ქუთაისი</p>
-                                </div>
+                                    ტრანსპორტირება</p>
+                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-
                 <!-- card 6 -->
                 <div class="swiper-slide">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Food/6.jpeg" class="card-img-top" alt="...">
+                    <a class="d-flex justify-content-center" href="#">
+                        <div class="card">
                             <div class="card-body">
-                                <!-- Link -->
-                                <a href="#">
-                                    <h6 class="card-title">კვების ობიექტი</h5>
-                                </a>
+                                <h5 class="card-title"><i class="fa-solid fa-car"></i></h5>
                                 <p class="card-text">
-                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <div>
-                                    <p><i class="fa-solid fa-location-dot"></i> თბილისი</p>
-                                </div>
+                                    ავტოგაქირავება</p>
+                                <p class="card-second-text">მოკლე აღწერა ამ პროდუქტთან დაკავშირებით! რაიმე ტექსტი.</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-
-
+            </div>
+            <div class="pagination">
+                <div class="swiper-pagination"></div>
             </div>
         </div>
-
-        <!-- Food page link -->
-        <div class=" d-flex justify-content-center algin-items-center">
-            <a href="#" class="btn btn-primary">მეტის ნახვა</a>
-        </div>
     </div>
-    <!--================ Food section end ================-->
+    <!--========== services end ==========-->
 
     <!--================ Hotel section start ================-->
-    <div class="container mt-5">
+    <div class="container mt-5" data-aos="fade-up">
         <div class="swiper hotel-section card-list-container py-4">
 
             <!-- Hotel Section title -->
@@ -1537,8 +1373,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -1550,8 +1384,335 @@
     </div>
     <!--================ Hotel section end ================-->
 
+    <!--================ Food section start ================-->
+    <div class="container mt-5" data-aos="fade-up">
+        <div class="swiper food-section card-list-container py-4">
+
+            <!-- Food Section title -->
+            <div class="d-flex justify-content-between align-items-center mb-3 container-title">
+                <h5>კვება</h5>
+
+                <div class="swiper-buttons-list">
+                    <div class="swiper-button-prev"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="swiper-button-next"><i class="fa-solid fa-chevron-left"></i></div>
+                </div>
+            </div>
+
+            <div class="swiper-wrapper">
+                <!-- card 1 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Food/1.webp" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">რამე რესტორანი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> შატილი</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 2 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Food/2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">კვების ობიექტი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> გურია</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 3 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Food/3.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">რამე რესტორანი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> თელავი</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 4 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Food/4.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">კვების ობიექტი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> საჩხერე</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 5 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Food/5.webp" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">რამე რესტორანი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> ქუთაისი</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 6 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Food/6.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">კვების ობიექტი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> თბილისი</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food page link -->
+        <div class=" d-flex justify-content-center algin-items-center">
+            <a href="#" class="btn btn-primary">მეტის ნახვა</a>
+        </div>
+    </div>
+    <!--================ Food section end ================-->
+
+
+    <!--================ Entertainment section start ================-->
+    <div class="container mt-5" data-aos="fade-up">
+        <div class="swiper entertainment-section card-list-container py-4">
+
+            <!-- Entertainment Section title -->
+            <div class="d-flex justify-content-between align-items-center mb-3 container-title">
+                <h5>გართობა</h5>
+
+                <div class="swiper-buttons-list">
+                    <div class="swiper-button-prev"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="swiper-button-next"><i class="fa-solid fa-chevron-left"></i></div>
+                </div>
+            </div>
+
+            <div class="swiper-wrapper">
+                <!-- card 1 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Entertainment/1.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">დისკოტეკა</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> ზესტაფონი</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 2 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Entertainment/2.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">ბარი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> მთიულეთი</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 3 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Entertainment/3.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">ბილიარდი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> ქართლი</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 4 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Entertainment/4.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">ბოულინგი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> რაჭა</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 5 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Entertainment/5.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">დარტსი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> აჭარა</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 6 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Entertainment/6.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">პინგ-პონგი</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="fa-solid fa-location-dot"></i> სამეგრელო</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- entertatment page link -->
+    <div class=" d-flex justify-content-center algin-items-center">
+        <a href="#" class="btn btn-primary">მეტის ნახვა</a>
+    </div>
+    </div>
+    <!--================ Entertainment section end ================-->
+
+
     <!--================ Extrem section start ================-->
-    <div class="container mt-5">
+    <div class="container mt-5" data-aos="fade-up">
         <div class="swiper extrem-section card-list-container py-4">
 
             <!-- Extrem Section title -->
@@ -1713,13 +1874,27 @@
     </div>
     <!--================ Extrem section end ================-->
 
-    <!--================ Entertainment section start ================-->
-    <div class="container mt-5">
-        <div class="swiper entertainment-section card-list-container py-4">
 
-            <!-- Entertainment Section title -->
+    <!--================ registration banner section start ================-->
+    <div class="p-3 mt-5 d-flex align-items-center justify-content-center text-center cta" data-aos="zoom-out-right">
+        <div class="container-fluid">
+            <h5>ავტორიზაცია</h5>
+            <p class="text-center mt-3 m-auto">
+                დარეგისტრირდი ბისნაზე და ატვირთე შენი პროდუქტი. წამოიწყე ან გააუმჯობესე შენი ბიზნესი.
+            </p>
+            <button class="btn btn-primary btn-lg cta-btn mt-3" type="button">ავტორიზაცია</button>
+        </div>
+    </div>
+    <!--================ registration banner section end ================-->
+
+
+    <!--================ guides section start ================-->
+    <div class="container mt-5" data-aos="fade-up">
+        <div class="swiper guides-section card-list-container py-4">
+
+            <!-- guides title -->
             <div class="d-flex justify-content-between align-items-center mb-3 container-title">
-                <h5>გართობა</h5>
+                <h5>გიდები</h5>
 
                 <div class="swiper-buttons-list">
                     <div class="swiper-button-prev"><i class="fa-solid fa-chevron-right"></i></div>
@@ -1732,11 +1907,124 @@
                 <div class="swiper-slide">
                     <div class="d-flex justify-content-center">
                         <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Entertainment/1.jpeg" class="card-img-top" alt="...">
+                            <img src="Assets/Image/Guide/naniko.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <!-- Link -->
                                 <a href="#">
-                                    <h6 class="card-title">დისკოტეკა</h5>
+                                    <h6 class="card-title">ნანიკო სუბელიანი</h5>
+                                </a>
+                                <p class="card-text">
+                                    <b>ტიპი:</b> კულტურული, საფეხმავლო...
+                                </p>
+
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <p><b>ენები:</b> Geo, Eng, Rus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 2 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Guide/zura.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">ზურა ნაცვლიშვილი</h5>
+                                </a>
+                                <p class="card-text">
+                                <p><b>ტიპი:</b> საფეხმავლო, კულტურული...</p>
+                                </p>
+
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <p><b>ენები: </b> Geo, Eng, Rus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 3 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Guide/jumberi.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">ჯუმბერი ბერიძე</h5>
+                                </a>
+                                <p class="card-text">
+                                <p><b>ტიპი:</b> საფეხმავლო, კულტურული...</p>
+                                </p>
+
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <p><b>ენები: </b> Geo, Eng, Rus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 4 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/Guide/pavle.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">პავლე რევაზიშვილი</h5>
+                                </a>
+                                <p class="card-text">
+                                <p><b>ტიპი:</b> საფეხმავლო, კულტურული...</p>
+                                </p>
+
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <p><b>ენები: </b> Geo, Eng, Rus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- guides page link -->
+        <div class=" d-flex justify-content-center algin-items-center">
+            <a href="#" class="btn btn-primary">მეტის ნახვა</a>
+        </div>
+    </div>
+    <!--================ guides section end ================-->
+
+    <!--================ Car rent section start ================-->
+    <div class="container mt-5" data-aos="fade-up">
+        <div class="swiper car-rent-section card-list-container py-4">
+
+            <!-- car rent title -->
+            <div class="d-flex justify-content-between align-items-center mb-3 container-title">
+                <h5>ავტოგაქირავება</h5>
+
+                <div class="swiper-buttons-list">
+                    <div class="swiper-button-prev"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="swiper-button-next"><i class="fa-solid fa-chevron-left"></i></div>
+                </div>
+            </div>
+
+            <div class="swiper-wrapper">
+                <!-- card 1 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/CarRent/Delica.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">Mitchubishi Delika</h5>
                                 </a>
                                 <p class="card-text">
                                     რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
@@ -1744,7 +2032,13 @@
                             </div>
                             <div class="card-footer d-flex justify-content-between">
                                 <div>
-                                    <p><i class="fa-solid fa-location-dot"></i> ზესტაფონი</p>
+                                    <p><i class="ri-steering-2-line"></i> მარცხნივ</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-gas-pump"></i> დიზელი</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-calendar-days"></i> 2015</p>
                                 </div>
                             </div>
                         </div>
@@ -1755,11 +2049,11 @@
                 <div class="swiper-slide">
                     <div class="d-flex justify-content-center">
                         <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Entertainment/2.jpeg" class="card-img-top" alt="...">
+                            <img src="Assets/Image/CarRent/Delika.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <!-- Link -->
                                 <a href="#">
-                                    <h6 class="card-title">ბარი</h5>
+                                    <h6 class="card-title">Mitchubishi Delica</h5>
                                 </a>
                                 <p class="card-text">
                                     რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
@@ -1767,7 +2061,13 @@
                             </div>
                             <div class="card-footer d-flex justify-content-between">
                                 <div>
-                                    <p><i class="fa-solid fa-location-dot"></i> მთიულეთი</p>
+                                    <p><i class="ri-steering-2-line"></i> მარჯვნივ</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-gas-pump"></i> გაზი</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-calendar-days"></i> 2013</p>
                                 </div>
                             </div>
                         </div>
@@ -1778,11 +2078,11 @@
                 <div class="swiper-slide">
                     <div class="d-flex justify-content-center">
                         <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Entertainment/3.jpg" class="card-img-top" alt="...">
+                            <img src="Assets/Image/CarRent/mazda.jpeg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <!-- Link -->
                                 <a href="#">
-                                    <h6 class="card-title">ბილიარდი</h5>
+                                    <h6 class="card-title">Mazda e440</h5>
                                 </a>
                                 <p class="card-text">
                                     რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
@@ -1790,7 +2090,13 @@
                             </div>
                             <div class="card-footer d-flex justify-content-between">
                                 <div>
-                                    <p><i class="fa-solid fa-location-dot"></i> ქართლი</p>
+                                    <p><i class="ri-steering-2-line"></i> მარჯვნივ</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-gas-pump"></i> ბენზინი</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-calendar-days"></i> 2017</p>
                                 </div>
                             </div>
                         </div>
@@ -1801,11 +2107,11 @@
                 <div class="swiper-slide">
                     <div class="d-flex justify-content-center">
                         <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Entertainment/4.jpg" class="card-img-top" alt="...">
+                            <img src="Assets/Image/CarRent/jeep.jpeg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <!-- Link -->
                                 <a href="#">
-                                    <h6 class="card-title">ბოულინგი</h5>
+                                    <h6 class="card-title">JEEP rubicon</h5>
                                 </a>
                                 <p class="card-text">
                                     რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
@@ -1813,7 +2119,13 @@
                             </div>
                             <div class="card-footer d-flex justify-content-between">
                                 <div>
-                                    <p><i class="fa-solid fa-location-dot"></i> რაჭა</p>
+                                    <p><i class="ri-steering-2-line"></i> მარცხნივ</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-gas-pump"></i> დიზელი</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-calendar-days"></i> 2012</p>
                                 </div>
                             </div>
                         </div>
@@ -1824,11 +2136,11 @@
                 <div class="swiper-slide">
                     <div class="d-flex justify-content-center">
                         <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Entertainment/5.jpeg" class="card-img-top" alt="...">
+                            <img src="Assets/Image/CarRent/volvo.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <!-- Link -->
                                 <a href="#">
-                                    <h6 class="card-title">დარტსი</h5>
+                                    <h6 class="card-title">Volvo</h5>
                                 </a>
                                 <p class="card-text">
                                     რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
@@ -1836,22 +2148,81 @@
                             </div>
                             <div class="card-footer d-flex justify-content-between">
                                 <div>
-                                    <p><i class="fa-solid fa-location-dot"></i> აჭარა</p>
+                                    <p><i class="ri-steering-2-line"></i> მარცხნივ</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-gas-pump"></i> დიზელი</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-calendar-days"></i> 2012</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- car rent page link -->
+        <div class=" d-flex justify-content-center algin-items-center">
+            <a href="#" class="btn btn-primary">მეტის ნახვა</a>
+        </div>
+    </div>
+    <!--================ Car rent section end ================-->
+
+    <!--================ Transport section start ================-->
+    <div class="container mt-5" data-aos="fade-up">
+        <div class="swiper transport-section card-list-container py-4">
+
+            <!-- Transport title -->
+            <div class="d-flex justify-content-between align-items-center mb-3 container-title">
+                <h5>ტრანსპორტირება</h5>
+
+                <div class="swiper-buttons-list">
+                    <div class="swiper-button-prev"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="swiper-button-next"><i class="fa-solid fa-chevron-left"></i></div>
+                </div>
+            </div>
+
+            <div class="swiper-wrapper">
+                <!-- card 1 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/CarRent/Delica.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">Mitchubishi Delika</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="ri-steering-2-line"></i> მარცხნივ</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-gas-pump"></i> დიზელი</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-calendar-days"></i> 2015</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- card 6 -->
+                <!-- card 2 -->
                 <div class="swiper-slide">
                     <div class="d-flex justify-content-center">
                         <div class="card" style="width: 18rem;">
-                            <img src="Assets/Image/Entertainment/6.jpg" class="card-img-top" alt="...">
+                            <img src="Assets/Image/CarRent/Delika.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <!-- Link -->
                                 <a href="#">
-                                    <h6 class="card-title">პინგ-პონგი</h5>
+                                    <h6 class="card-title">Mitchubishi Delica</h5>
                                 </a>
                                 <p class="card-text">
                                     რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
@@ -1859,7 +2230,100 @@
                             </div>
                             <div class="card-footer d-flex justify-content-between">
                                 <div>
-                                    <p><i class="fa-solid fa-location-dot"></i> სამეგრელო</p>
+                                    <p><i class="ri-steering-2-line"></i> მარჯვნივ</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-gas-pump"></i> გაზი</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-calendar-days"></i> 2013</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 3 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/CarRent/mazda.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">Mazda e440</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="ri-steering-2-line"></i> მარცხნივ</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-gas-pump"></i> ბენზინი</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-calendar-days"></i> 2017</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 4 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/CarRent/jeep.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">JEEP rubicon</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="ri-steering-2-line"></i> მარცხნივ</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-gas-pump"></i> დიზელი</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-calendar-days"></i> 2012</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 5 -->
+                <div class="swiper-slide">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Assets/Image/CarRent/volvo.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <!-- Link -->
+                                <a href="#">
+                                    <h6 class="card-title">Volvo</h5>
+                                </a>
+                                <p class="card-text">
+                                    რამე ტექსტი აღწერა ამ პროდუქტის შესახებ. და ეს არის ტექსტის მაქსიმუმი lenth...
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div>
+                                    <p><i class="ri-steering-2-line"></i> მარჯვნივ</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-gas-pump"></i> დიზელი</p>
+                                </div>
+                                <div>
+                                    <p><i class="fa-solid fa-calendar-days"></i> 2012</p>
                                 </div>
                             </div>
                         </div>
@@ -1869,17 +2333,86 @@
 
             </div>
         </div>
-    </div>
 
-    <!-- entertatment page link -->
-    <div class=" d-flex justify-content-center algin-items-center">
-        <a href="#" class="btn btn-primary">მეტის ნახვა</a>
+        <!-- car rent page link -->
+        <div class=" d-flex justify-content-center algin-items-center">
+            <a href="#" class="btn btn-primary">მეტის ნახვა</a>
+        </div>
     </div>
-    </div>
-    <!--================ Entertainment section end ================-->
+    <!--================ Car rent section end ================-->
 
-    <!--================ Call to action start ================-->
-    <!--================ Call to action end ================-->
+    <!--================ Contact Section start ================-->
+    <section id="contact" class="contact pt-4 pb-5 mt-5" data-aos="zoom-out-right">
+        <div class="container" data-aos="zoom-out-left">
+            <div class="section-title text-center">
+                <h2>კონტაქტი</h2>
+                <p>
+                    დაგვიკავშირდით თუ რაიმე კითხვა გაქვთ ჩვენთან ჩვენი ოპერატორი მალე გიპასუხებთ. გმადლობთ რომ სარგებლობთ ჩვენი
+                    მომსახურეობით!
+                </p>
+            </div>
+        </div>
+
+        <div class="container" data-aos="zoom-out-left">
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="info-box">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <h3>მისამართი</h3>
+                                <p>თბილისი, საქართველო</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box mt-4">
+                                <i class="fa-solid fa-envelope"></i>
+                                <h3>ემაილი</h3>
+                                <p>info@example.com<br>contact@example.com</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box mt-4">
+                                <i class="fa-solid fa-phone"></i>
+                                <h3>ტელეფონის ნომერი</h3>
+                                <p>+995 557 12 90 39<br>
+                                    +995 557 12 90 39
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="zoom-in-left">
+                    <form action="" method="post" role="form" class="php-email-form">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="სახელი გვარი" required="">
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="ელ. ფოსტა" required="">
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="თემა" required="">
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea class="form-control" name="message" rows="5" placeholder="შეტყობინება დაწერეთ აქ..." required=""></textarea>
+                        </div>
+                        <div class="my-3">
+                            <div class="loading">გთხოვთ დაელოდოთ!</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">შეტყობინება წარმატებით გაიგზავნა!</div>
+                        </div>
+                        <div class="text-center mt-3"><button class="btn btn-primary" type="submit">გაგზავნა</button></div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!--================ Contact Section end ================-->
 
     <!--========== Difficulty list start ==========-->
     <!-- Difficulty A -->
@@ -1894,7 +2427,8 @@
                 </div>
                 <div class="modal-body">
                     <p class="text-left">
-                        მოიცავს მარტივ სანახაობრივ მოგზაურობას. არ შეიცავს, ან უმნიშვნელო ოდენობით შეიცავს საფეხმავლო ელემენტებს.
+                        მოიცავს მარტივ სანახაობრივ მოგზაურობას. არ შეიცავს, ან უმნიშვნელო ოდენობით შეიცავს საფეხმავლო
+                        ელემენტებს.
                     </p>
                 </div>
                 <div class="modal-footer">
@@ -1915,7 +2449,8 @@
                     <div></div>
                 </div>
                 <div class="modal-body">
-                    <p>გულისხმობს ნაკლებად მძიმე ფიზიკურ დატვირთვას. შეიცავს ნაკლებად რთულ რელიეფზე / გარემო პირობებში გადაადგილებას.</p>
+                    <p>გულისხმობს ნაკლებად მძიმე ფიზიკურ დატვირთვას. შეიცავს ნაკლებად რთულ რელიეფზე / გარემო პირობებში
+                        გადაადგილებას.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">დახურვა</button>
@@ -1956,9 +2491,12 @@
                 </div>
                 <div class="modal-body">
                     <p>
-                        გულისხმობს მძიმე ფიზიკურ დატვირთვას. შეიცავს განსაკუთრებით რთულ რელიეფზე / გარემო პირობებში გადაადგილებას. მონაწილისგან
-                        მოითხოვს კარგ ფიზიკურ ფორმაში ყოფნას და რთულ საფეხმავლო ლაშქრობებში მონაწილეობის გამოცდილებას. მონაწილე ფიზიკურად და
-                        ფსიქოლოგიურად მზად უნდა იყოს მოსალოდნელი დაბრკოლებებისადმი. შესაძლოა შეიცავდეს გარკვეულ საფრთხეებს, რაზეც მონაწილე
+                        გულისხმობს მძიმე ფიზიკურ დატვირთვას. შეიცავს განსაკუთრებით რთულ რელიეფზე / გარემო პირობებში
+                        გადაადგილებას. მონაწილისგან
+                        მოითხოვს კარგ ფიზიკურ ფორმაში ყოფნას და რთულ საფეხმავლო ლაშქრობებში მონაწილეობის გამოცდილებას.
+                        მონაწილე ფიზიკურად და
+                        ფსიქოლოგიურად მზად უნდა იყოს მოსალოდნელი დაბრკოლებებისადმი. შესაძლოა შეიცავდეს გარკვეულ
+                        საფრთხეებს, რაზეც მონაწილე
                         წინასწარ
                         იქნება გაფრთხილებული.
                     </p>
@@ -1972,7 +2510,7 @@
     <!--========== Difficulty list end ==========-->
 
     <!--========== Cookie start ==========-->
-    <div class="cookie-container">
+    <div class="cookie-container" data-aos="zoom-out-right">
         <p>
             ჩვენ ვიყენებთ ქუქიებს, რათა გავაუმჯობესოთ <b>ბისნას</b> თქვენი
             მოხმარებისთვის. ჩვენი ვებსაიტის გამოყენების გაგრძელებით თქვენ
@@ -1986,25 +2524,78 @@
     <!--========== Cookie end ==========-->
 
     <!--========== Footer start ==========-->
-    <footer class="py-3 my-4 footer">
-        <div class="d-flex justify-content-between px-5">
-            <img src="Assets/Image/Logo/Light.png" height="40" alt="">
-            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">მთავარი</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">ტურები</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">ადგილები</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">გიდები</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">დაბინავება</a></li>
-            </ul>
-            <div class="social-media-links">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    <footer id="footer" data-aos="zoom-out-left">
+        <div class="footer-top mt-5">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6" data-aos="zoom-out-right">
+                        <div class="footer-info">
+                            <h3>ადგილმდებარეობა</h3>
+                            <p>
+                                თბილისი - Tbilisi <br>
+                                საქართველო - Georgia<br><br>
+                                <strong>Phone:</strong> +995 557 12 90 39<br>
+                                <strong>Email:</strong> info@example.com<br>
+                            </p>
+                            <div class="social-links mt-3">
+                                <a href="#" data-bs-toggle="tooltip" data-bs-title="Facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="#" data-bs-toggle="tooltip" data-bs-title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" data-bs-toggle="tooltip" data-bs-title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#" data-bs-toggle="tooltip" data-bs-title="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="#" data-bs-toggle="tooltip" data-bs-title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links" data-aos="zoom-out-right">
+                        <h4>ხშირი ბმულები</h4>
+                        <ul>
+                            <li><i class=" bx bx-chevron-right"></i> <a href="#">დაბინავება</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">კვება</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">გართობა</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">ექსტრემი & რეკრეაცია</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">გიდები</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">ავტოგაქირავება</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links" data-aos="zoom-out-left">
+                        <h4>ჩვენ შესახებ</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">ბისნას შესახებ</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">საქართველოს შესახებ</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">როგორ დავჯავშნოთ ტური</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">ხშირად დასმული კითხვები</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-newsletter" data-aos="zoom-out-left">
+                        <h4>სიახლეები</h4>
+                        <p>გამოგვიწერეთ რათა არ გამოტოვოთ სიახლეები ბისნაზე!</p>
+                        <form action="" method="post">
+                            <input type="email" name="email">
+                            <input type="submit" value="გამოწერა">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-        <p class="text-center text-body-secondary">&copy; Developed by WEB INVENT</p>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Bisna</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
+                Designed by <a href="https://bootstrapmade.com/">WEB INVENT</a>
+            </div>
+        </div>
     </footer>
     <!--========== Footer end ==========-->
 
@@ -2019,6 +2610,14 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <!-- Google -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- AOS 2.3.1-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init();
+    </script>
+
     <!--=========== Main JS Link ===========-->
     <script src="Assets/Script/script.js"></script>
 </body>

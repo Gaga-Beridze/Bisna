@@ -1,7 +1,3 @@
-/*----------------------------------------------
-# Preloader
-----------------------------------------------*/
-
 /*---------------------------------
 # header
 ---------------------------------*/
@@ -200,6 +196,130 @@ if (darkMode === 'true') {
   }
 }
 
+/* ----------------------------------------
+# Sound mute sytstem
+-----------------------------------------*/
+const soundOn = document.getElementById('sound-on'),
+  soundOff = document.getElementById('sound-off'),
+  mediaSound = document.querySelectorAll('audio, video')
+
+soundOn.addEventListener('change', () => {
+  mediaSound.forEach((element) => {
+    element.muted = false
+  })
+  eraseCookie('sound')
+  sound = true
+})
+
+soundOff.addEventListener('click', () => {
+  mediaSound.forEach((element) => {
+    element.muted = true
+    setCookie('sound', 'true', 365)
+    sound = null
+  })
+})
+
+var sound = getCookie('sound')
+
+if (sound === 'true') {
+  mediaSound.forEach((element) => {
+    element.muted = true
+  })
+  if (soundOff.value === '1') {
+    soundOn.checked = false
+    soundOff.checked = true
+  }
+}
+
+/* ----------------------------------------
+# Tooltips
+-----------------------------------------*/
+const tooltipTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="tooltip"]'
+)
+const tooltipList = [...tooltipTriggerList].map(
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+)
+
+
+/* ----------------------------------------
+# Internet detector 
+-----------------------------------------*/
+const statusElement = document.getElementById('status')
+let hasShownToast = false // Add a boolean flag
+
+function showToast(message, bgColor, color) {
+  // Create a new toast element
+  const toastElement = document.createElement('div')
+  toastElement.classList.add('toast')
+  toastElement.classList.add('fade')
+  toastElement.setAttribute('role', 'alert')
+  toastElement.setAttribute('aria-live', 'assertive')
+  toastElement.setAttribute('aria-atomic', 'true')
+  toastElement.setAttribute('data-bs-autohide', 'true')
+  toastElement.setAttribute('data-bs-delay', '25000')
+  toastElement.style.backgroundColor = bgColor
+  toastElement.style.color = color
+
+  // Create a toast header
+  const toastHeader = document.createElement('div')
+  toastHeader.classList.add('toast-header')
+  toastHeader.innerHTML = `
+    <strong class="me-auto"><i class="fa-solid fa-triangle-exclamation"></i> შეტყობინება</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  `
+
+  // header and message to the toast
+  const toastBody = document.createElement('div')
+  toastBody.classList.add('toast-body')
+  toastBody.innerText = message
+  toastElement.appendChild(toastHeader)
+  toastElement.appendChild(toastBody)
+
+  // Add the toast to the container and show it
+  const toastContainer = document.querySelector('.toast-container')
+  toastContainer.appendChild(toastElement)
+  const bootstrapToast = new bootstrap.Toast(toastElement)
+  bootstrapToast.show()
+}
+
+// internet detection
+function updateStatus() {
+  if (navigator.onLine) {
+    statusElement.innerText = 'Active'
+    statusElement.style.color = 'var(--Main-color)'
+    if (hasShownToast) {
+      showToast(
+        'პრობლემა მოგვარებულია, თქვენი ინტერნეტ კავშირი აღსდგა!',
+        'var(--background-color-1)',
+        'var(--Main-color)'
+      )
+      hasShownToast = false
+    }
+  } else {
+    statusElement.innerText = 'Offline'
+    statusElement.style.color = 'red'
+    if (!hasShownToast) {
+      showToast(
+        'წარმოიშვა შეცდომა, თქვენი ინტერნეტ კავშირი დაიკარგა!',
+        'var(--background-color-1)',
+        'red'
+      )
+      const alertSound = document.getElementById('internet-connection-sound')
+      alertSound.play()
+      hasShownToast = true
+    }
+  }
+}
+
+window.addEventListener('online', updateStatus)
+window.addEventListener('offline', updateStatus)
+
+// Initial status check
+updateStatus()
+
 /*---------------------------------
 # Hero
 ---------------------------------*/
@@ -268,95 +388,7 @@ var swiper = new Swiper('.services', {
   },
 })
 
-/*---------------------------------
-# popular tours
----------------------------------*/
-var swiper = new Swiper('.popular-tours', {
-  slidesPerView: 4,
-  effect: 'slide',
-  centeredSlides: true,
-  spaceBetween: 10,
-  navigation: {
-    nextEl: '.swiper-button-prev',
-    prevEl: '.swiper-button-next',
-  },
-  breakpoints: {
-    320: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    640: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    768: {
-      centeredSlides: false,
-    },
-  },
-})
-
-/*---------------------------------
-# Popular places
----------------------------------*/
-var swiper = new Swiper('.popular-place', {
-  effect: 'slide',
-  slidesPerView: 4,
-  spaceBetween: 10,
-  breakpoints: {
-    320: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    640: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    768: {
-      slidesPerView: 'auto',
-      centeredSlides: false,
-    },
-    1024: {
-      slidesPerView: 4,
-      spaceBetween: 10,
-    },
-  },
-  navigation: {
-    nextEl: '.swiper-button-prev',
-    prevEl: '.swiper-button-next',
-  },
-})
-
-/*---------------------------------
-# guides section
----------------------------------*/
-var swiper = new Swiper('.guides-section', {
-  effect: 'slide',
-  slidesPerView: 4,
-  centeredSlides: true,
-  spaceBetween: 10,
-  navigation: {
-    nextEl: '.swiper-button-prev',
-    prevEl: '.swiper-button-next',
-  },
-  breakpoints: {
-    320: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    640: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    768: {
-      centeredSlides: false,
-    },
-  },
-})
-
-/*---------------------------------
-# car rent section
----------------------------------*/
-var swiper = new Swiper('.car-rent-section', {
+var swiperOptions = {
   effect: 'slide',
   slidesPerView: 4,
   centeredSlides: false,
@@ -378,139 +410,39 @@ var swiper = new Swiper('.car-rent-section', {
       centeredSlides: false,
     },
   },
-})
+}
 
-/*---------------------------------
-# car rent section
----------------------------------*/
-var swiper = new Swiper('.car-rent-section', {
-  effect: 'slide',
-  slidesPerView: 4,
-  centeredSlides: false,
+var swiper = new Swiper('.hero', {
   spaceBetween: 10,
-  navigation: {
-    nextEl: '.swiper-button-prev',
-    prevEl: '.swiper-button-next',
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: false,
   },
-  breakpoints: {
-    320: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    640: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    768: {
-      centeredSlides: false,
-    },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: false,
+  },
+  autoplay: {
+    delay: 4000,
   },
 })
 
-/*---------------------------------
-# Food section
----------------------------------*/
-var swiper = new Swiper('.food-section', {
-  effect: 'slide',
-  slidesPerView: 4,
-  centeredSlides: false,
-  spaceBetween: 10,
-  navigation: {
-    nextEl: '.swiper-button-prev',
-    prevEl: '.swiper-button-next',
-  },
-  breakpoints: {
-    320: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    640: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    768: {
-      centeredSlides: false,
-    },
-  },
-})
-
-/*---------------------------------
-# Hotel section
----------------------------------*/
-var swiper = new Swiper('.hotel-section', {
-  effect: 'slide',
-  slidesPerView: 4,
-  centeredSlides: false,
-  spaceBetween: 10,
-  navigation: {
-    nextEl: '.swiper-button-prev',
-    prevEl: '.swiper-button-next',
-  },
-  breakpoints: {
-    320: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    640: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    768: {
-      centeredSlides: false,
-    },
-  },
-})
-
-/*---------------------------------
-# Extrem section
----------------------------------*/
-var swiper = new Swiper('.extrem-section', {
-  effect: 'slide',
-  slidesPerView: 4,
-  centeredSlides: false,
-  spaceBetween: 10,
-  navigation: {
-    nextEl: '.swiper-button-prev',
-    prevEl: '.swiper-button-next',
-  },
-  breakpoints: {
-    320: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    640: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    768: {
-      centeredSlides: false,
-    },
-  },
-})
-
-/*---------------------------------
-# Entertainment section
----------------------------------*/
-var swiper = new Swiper('.entertainment-section', {
-  effect: 'slide',
-  slidesPerView: 4,
-  centeredSlides: false,
-  spaceBetween: 10,
-  navigation: {
-    nextEl: '.swiper-button-prev',
-    prevEl: '.swiper-button-next',
-  },
-  breakpoints: {
-    320: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    640: {
-      centeredSlides: false,
-      slidesPerView: 'auto',
-    },
-    768: {
-      centeredSlides: false,
-    },
-  },
+;[
+  'popular-tours',
+  'popular-place',
+  'guides-section',
+  'car-rent-section',
+  'transport-section',
+  'food-section',
+  'hotel-section',
+  'extrem-section',
+  'entertainment-section',
+  'scheduled-tours',
+].forEach(function (sectionClass) {
+  var sectionSelector = '.' + sectionClass
+  new Swiper(sectionSelector, swiperOptions)
 })
