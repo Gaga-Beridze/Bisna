@@ -1271,7 +1271,6 @@ label {
 .cta {
     background-color: var(--bg-color-1);
     color: var(--txt-color);
-    border-radius: var(--radius-huge);
 }
 
 .cta h1 {
