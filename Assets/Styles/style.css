@@ -14,8 +14,8 @@
     --bg-glass: #e6e6e688;
     --txt-color: #313131;
     --txt-color-2: #65676B;
-    --main-color: #14C38E;
-    --main-color-hover: #009b74;
+    --main-color: rgb(84, 167, 167);
+    --main-color-hover: rgb(74, 150, 150);
     --box-shadow: #00000017;
 
     /*--------- Font size ---------*/
@@ -246,6 +246,8 @@ h6 {
     background-color: var(--bg-color-1);
     color: var(--txt-color);
     border-radius: var(--radius-huge);
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    transition: var(--transition-3);
 }
 
 .card img {
@@ -272,6 +274,9 @@ h6 {
     font-size: var(--font-size-small);
 }
 
+.card:hover {
+    transform: scale(1.04);
+}
 
 /*---------------------------
 # Offcanvas
@@ -320,6 +325,33 @@ h6 {
     width: var(--bs-offcanvas-width);
     border: none !important;
     transform: translateX(-100%);
+}
+
+/*--------------------------------------
+# Toast
+--------------------------------------*/
+.toast {
+    border-radius: var(--radius-big);
+    border: none;
+    font-family: var(--base-font);
+}
+
+.toast button {
+    margin-top: 0 !important;
+}
+
+.toast-header {
+    border-top-right-radius: var(--radius-big);
+    border-top-left-radius: var(--radius-big);
+    background-color: var(--bg-color-1);
+    color: var(--text-color);
+    border: none;
+}
+
+.toast-body {
+    background-color: var(--bg-color-1);
+    border-bottom-right-radius: var(--radius-big);
+    border-bottom-left-radius: var(--radius-big);
 }
 
 /*---------------------------
@@ -575,7 +607,8 @@ header {
 .navbar .nav-link::before {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 50%;
+    margin-left: 10px;
     height: 2px;
     border-radius: 4px;
     background-color: var(--main-color);
@@ -1131,11 +1164,6 @@ label {
     color: var(--txt-color-2);
 }
 
-.popular-tours .card:hover {
-    transform: scale(1.05);
-    transition: var(--transition-3);
-}
-
 .popular-tours .card .price {
     position: absolute;
     top: 0;
@@ -1145,18 +1173,6 @@ label {
     margin: 10px;
     padding: 2px 15px;
     border-radius: var(--radius-medium);
-}
-
-/*--------------------------------------
-# Popular places
---------------------------------------*/
-.popular-place .card {
-    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
-    transition: var(--transition-3);
-}
-
-.popular-place .card:hover {
-    transform: translateY(-10px);
 }
 
 /*--------------------------------------
@@ -1187,83 +1203,6 @@ label {
 .guides-section .card:hover {
     transform: scale(1.04);
 }
-
-/*--------------------------------------
-# car rent section
---------------------------------------*/
-.car-rent-section .card {
-    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
-    transition: var(--transition-3);
-}
-
-.car-rent-section .card:hover {
-    transform: scale(1.04);
-}
-
-.footer {
-    background-color: var(--bg-color-1);
-}
-
-/*--------------------------------------
-# Transport section
---------------------------------------*/
-.transport-section .card {
-    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
-    transition: var(--transition-3);
-}
-
-.transport-section .card:hover {
-    transform: scale(1.04);
-}
-
-/*--------------------------------------
-# Food card Section
---------------------------------------*/
-.food-section .card {
-    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
-    transition: var(--transition-3);
-}
-
-.food-section .card:hover {
-    transform: scale(1.04);
-}
-
-/*--------------------------------------
-# Hotel card Section
---------------------------------------*/
-.hotel-section .card {
-    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
-    transition: var(--transition-3);
-}
-
-.hotel-section .card:hover {
-    transform: scale(1.04);
-}
-
-/*--------------------------------------
-# Extrem card Section
---------------------------------------*/
-.extrem-section .card {
-    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
-    transition: var(--transition-3);
-}
-
-.extrem-section .card:hover {
-    transform: scale(1.04);
-}
-
-/*--------------------------------------
-# Entertainment card Section
---------------------------------------*/
-.entertainment-section .card {
-    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
-    transition: var(--transition-3);
-}
-
-.entertainment-section .card:hover {
-    transform: scale(1.04);
-}
-
 
 /*--------------------------------------
 # Call to Action
@@ -1350,14 +1289,6 @@ label {
     max-width: 300px;
     border-radius: var(--radius-big);
     margin-right: 30px;
-}
-
-@media (max-width: 768px) {
-    .news .tab-pane img {
-        float: none;
-        padding: 0 0 15px 0;
-        max-width: 100%;
-    }
 }
 
 .news .tab-pane h3 {
@@ -1461,12 +1392,6 @@ label {
     padding: 30px;
     background-color: var(--bg-color-2);
     border-radius: var(--radius-huge);
-}
-
-@media (max-width: 768px) {
-    .php-email-form {
-        margin-top: 20px;
-    }
 }
 
 .contact .php-email-form .error-message {
@@ -1698,6 +1623,21 @@ label {
 /*================================================================
 # Responsive (media queries)
 =================================================================*/
+@media (max-width: 1440px) {
+
+    /*--------------------------------------
+    # Navbar
+    --------------------------------------*/
+    .navbar {
+        padding: 5px 0px;
+    }
+
+    .navbar-nav {
+        margin-left: 0;
+    }
+
+}
+
 @media (max-width: 768px) {
 
     /*--------------------------------------
@@ -1709,6 +1649,20 @@ label {
 
     .offcanvas-top {
         width: 100% !important;
+    }
+
+    /*--------------------------------------
+    # Cards
+    --------------------------------------*/
+    .card:hover {
+        transform: scale(1);
+    }
+
+    /*--------------------------------------
+    # Contact
+    --------------------------------------*/
+    .php-email-form {
+        margin-top: 20px;
     }
 
     /*--------------------------------------
@@ -1786,8 +1740,12 @@ label {
         padding: 0 0;
     }
 
-    /*-------------- Popular tours ------------*/
-    .popular-tours .card:hover {
-        transform: scale(1);
+    /*-------------- News ------------*/
+    .news .tab-pane img {
+        float: none;
+        padding: 0 0 15px 0;
+        max-width: 100%;
     }
+
+
 }
