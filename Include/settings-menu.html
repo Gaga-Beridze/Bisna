@@ -1,0 +1,188 @@
+<div class="offcanvas offcanvas-start" tabindex="-1" id="settings-menu" aria-labelledby="settingsLabel">
+    <div class="offcanvas-header">
+        <!-- Settings Menu title-->
+        <h5 class="offcanvas-title" id="settingsLabel">
+            <i class="fa-solid fa-gear"></i> პარამეტრები
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+    <div class="offcanvas-body settings-body">
+        <div class="settings-container">
+            <!------------ Dark & Light Mode ------------>
+            <div class="settings-item">
+                <div class="settings-header">
+                    <!-- Item title -->
+                    <div class="align-items-center mb-2">
+                        <div>
+                            <div class="settings-header-icon">
+                                <i class="fa-solid fa-moon"></i>
+                            </div>
+                            ღამის რეჟიმი
+                        </div>
+                    </div>
+                    <!-- Item description -->
+                    <p>
+                        დაარეგულირეთ <b>ბისნას</b> გარეგნობა, რათა შეამციროთ მბზინვარება
+                        და დაასვენოთ თვალები.
+                    </p>
+                </div>
+
+                <div class="mt-3">
+                    <!-- Dark mode switch -->
+                    <div class="settings-switch">
+                        <label class="d-flex justify-content-between align-items-center" for="dark-mode-on">
+                            <p>ჩართვა</p>
+                            <input class="form-check-input" value="1" type="radio" name="DarkMode" id="dark-mode-on" />
+                        </label>
+                    </div>
+                    <!-- Light mode switch -->
+                    <div class="settings-switch">
+                        <label class="d-flex justify-content-between align-items-center" for="dark-mode-off">
+                            <p>გამორთვა</p>
+                            <input class="form-check-input" value="0" type="radio" name="DarkMode" id="dark-mode-off" checked />
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!------------ Color Pallete ------------>
+            <div class="settings-item mt-2">
+                <div class="settings-header">
+                    <!-- Item title -->
+                    <div class="align-items-center mb-2">
+                        <div>
+                            <div class="settings-header-icon">
+                                <i class="fa-solid fa-droplet"></i>
+                            </div>
+                            გარემოს შეცვლა
+                        </div>
+                    </div>
+                    <!-- Item description -->
+                    <p class="mb-5">
+                        ზოგიერთ მოხმარებელს ვებ-გვერდიზე არსებული მთავარი ფერები დისკომფორტს უქმნიან, ამიტომ
+                        დაარეგულირეთ
+                        <b>ბისნას</b>
+                        გარემო, საკუთარი სურვილისამებრ.
+                    </p>
+                </div>
+
+                <div class="col-md-12 d-flex justify-content-center align-items-center">
+                    <div class="row">
+                        <!-- Default color -->
+                        <div class="color default" id="default">
+                            <i class="color-checked fa fa-check-circle"></i>
+                        </div>
+                        <!-- pink color -->
+                        <div class="color pink" id="pink">
+                            <i class="color-checked fa fa-check-circle"></i>
+                        </div>
+                        <!-- green color -->
+                        <div class="color green" id="green">
+                            <i class="color-checked fa fa-check-circle"></i>
+                        </div>
+                        <!-- orange color -->
+                        <div class="color orange" id="orange">
+                            <i class="color-checked fa fa-check-circle"></i>
+                        </div>
+                        <!-- red color -->
+                        <div class="color red" id="red">
+                            <i class="color-checked fa fa-check-circle"></i>
+                        </div>
+                        <!-- purple color -->
+                        <div class="color black" id="black">
+                            <i class="color-checked fa fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!------------ Font Size range ------------>
+            <div class="settings-item mt-2">
+                <div class="settings-header">
+                    <!-- Item title -->
+                    <div class="align-items-center mb-2">
+                        <div>
+                            <div class="settings-header-icon">
+                                <i class="fa-solid fa-font"></i>
+                            </div>
+                            შრიფტის ზომა
+                        </div>
+                    </div>
+                    <!-- Item description -->
+                    <p>
+                        დაარეგულირეთ <b>ბისნას</b> გარეგნობა, მოირგეთ შიფტის ზომა
+                        საკუთარი სურვილისამებრ.
+                    </p>
+                </div>
+
+                <div class="mt-3">
+                    <!-- Small mode -->
+                    <div class="settings-switch">
+                        <label class="d-flex justify-content-between align-items-center" for="FontSize-small">
+                            <p>პატარა</p>
+                            <input class="form-check-input" value="0" type="radio" name="FontSize" id="FontSize-small" />
+                        </label>
+                    </div>
+                    <!-- Normall mode -->
+                    <div class="settings-switch">
+                        <label class="d-flex justify-content-between align-items-center" for="FontSize-normall">
+                            <p>სტანდარტი</p>
+                            <input class="form-check-input" value="1" type="radio" name="FontSize" id="FontSize-normall" checked />
+                        </label>
+                    </div>
+                    <!-- Big mode -->
+                    <div class="settings-switch">
+                        <label class="d-flex justify-content-between align-items-center" for="FontSize-big">
+                            <p>დიდი</p>
+                            <input class="form-check-input" value="1" type="radio" name="FontSize" id="FontSize-big" />
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!------------ Sound button start ------------>
+            <div class="settings-item mt-2">
+                <div class="settings-header">
+                    <!-- Item title -->
+                    <div class="align-items-center mb-2">
+                        <div>
+                            <div class="settings-header-icon">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+                            ხმის მართვა
+                        </div>
+                    </div>
+                    <!-- Item description -->
+                    <p>
+                        შესაძლოა ვებ-გვერდზე არსებული შეტყობინების ხმები თქვენთვის
+                        დისკომფორტი აღმოჩნდეს, ამიტომ თქვენ შეგიძლიათ მართოთ იგი.
+                    </p>
+                </div>
+
+                <div class="mt-3">
+                    <!-- Border none mode switch -->
+                    <div class="settings-switch">
+                        <label class="d-flex justify-content-between align-items-center" for="sound-on">
+                            <p>ხმის ჩართვა</p>
+                            <input class="form-check-input" value="0" type="radio" name="sound" id="sound-on" checked />
+                        </label>
+                    </div>
+                    <!-- Bordered mode switch -->
+                    <div class="settings-switch">
+                        <label class="d-flex justify-content-between align-items-center" for="sound-off">
+                            <p>ხმის გამორთვა</p>
+                            <input class="form-check-input" value="1" type="radio" name="sound" id="sound-off" />
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!------------ Sound button end ------------>
+        </div>
+    </div>
+</div>
+
+<script>
+    alert("ALSJKDNASLJKDN")
+</script>

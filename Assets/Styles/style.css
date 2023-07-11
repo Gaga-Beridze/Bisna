@@ -120,8 +120,8 @@ body.black {
 }
 
 body.default {
-    --main-color: #00af83 !important;
-    --main-color-hover: #009b74 !important;
+    --main-color: rgb(84, 167, 167) !important;
+    --main-color-hover: rgb(74, 150, 150) !important;
 }
 
 /* ----- Font scheme ----- */
@@ -970,12 +970,12 @@ label {
 }
 
 #default {
-    background-color: #00af83;
+    background-color: rgb(84, 167, 167);
     transition: var(--transition-3);
 }
 
 #default:hover {
-    background-color: #009b74;
+    background-color: rgb(74, 150, 150);
 }
 
 .color-main-content {
@@ -1083,9 +1083,9 @@ label {
 }
 
 .hero-container h5 {
-    font-size: var(--font-size-huge);
     color: #fff;
-    font-family: 600;
+    font-family: var(--head-font);
+    font-size: var(--font-size-huge) !important;
 }
 
 .hero-container p {
