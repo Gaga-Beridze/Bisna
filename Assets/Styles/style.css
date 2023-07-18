@@ -1,0 +1,317 @@
+/*--------------------------------------
+# import fonts
+--------------------------------------*/
+@font-face {
+    font-family: 'Base';
+    src: url(/Assets/Fonts/Base/base.ttf);
+}
+
+@font-face {
+    font-family: 'Title';
+    src: url(/Assets/Fonts/Title/title.ttf);
+}
+
+
+/*--------------------------------------
+# Root variables
+--------------------------------------*/
+:root{
+
+    /*--- color ---*/
+    --bg-color-1: #f0f0f0;
+    --bg-color-2: #fff;
+    --border-color: #ced4da;
+    --text-color-1: #272727;
+    --text-color-2: #525252;
+    --main-color: rgb(84, 167, 167);
+
+    /*--- font ---*/
+    --font-base: 'Base', sans-serif;
+    --font-title: 'Title', sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: var(--bg-color-1);
+}
+
+body.dark{
+    --bg-color-1: #333333;
+    --bg-color-2: #222222;
+    --text-color-1: #fff;
+    --text-color-2: #eeeeee;
+    --border-color: #333333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: var(--font-title);
+}
+
+a{
+    text-decoration: none;
+}
+
+a,
+p{
+    font-size: 13px;
+}
+
+button:focus{
+    box-shadow: unset !important;
+    border: unset !important;
+}
+
+/*--------------------------------------
+# Bootstrap
+--------------------------------------*/
+.modal-dialog,
+.modal-header,
+.modal-footer,
+.modal-body,
+.offcanvas {
+  background-color: var(--bg-color-2);
+  border: none;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+@keyframes fade-in {
+    0% {
+        transform: scale(0)
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+.modal.fade {
+    animation-duration: 0.2s;
+}
+
+.modal.fade.show {
+    animation-name: fade-in;
+}
+
+.modal.fade {
+    animation-name: fade-out;
+}
+
+/*--------------------------------------
+# Navbar
+--------------------------------------*/
+.navbar {
+    background-color: var(--bg-color-2);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .nav-link,
+.navbar-expand-xl .dropdown-menu a {
+    color: var(--text-color-2);
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.show {
+    color: var(--main-color);
+}
+
+.navbar-expand-xl .offcanvas .offcanvas-body {
+    display: flex;
+    justify-content: start;
+    font-family: var(--font-title);
+    font-size: 12px;
+    padding-left: 20px;
+}
+
+.navbar-expand-xl .dropdown-menu.center {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: block;
+    margin-top: 40px;
+    pointer-events: none;
+    border: none;
+    border-radius: 12px;
+    padding: 5px;
+    background-color: var(--bg-color-2);
+    font-family: var(--font-base);
+    width: auto;
+    min-width: auto;
+    box-shadow: rgba(17, 17, 17, 0.2) 0px 8px 24px;
+    transition: opacity 0.3s ease, margin-top 0.3s ease, pointer-events 0.3s ease;
+}
+
+.navbar-expand-xl .dropdown-menu.show {
+    opacity: 1;
+    margin-top: 15px;
+    pointer-events: all;
+}
+
+.navbar-expand-xl .dropdown-toggle .fa-chevron-down{
+    transition: transform 0.3s ease;
+}
+
+.navbar-expand-xl .dropdown-toggle.show > .fa-chevron-down {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.navbar-expand-xl .line{
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    margin-right: 5px;
+    padding-right: 5px;
+}
+
+.navbar-expand-xl .dropdown-menu .dropdown-item {
+    background-color: var(--bg-color-2);
+    border-radius: 10px;
+    padding: 7px 10px;
+}
+
+.navbar-expand-xl .dropdown-menu .dropdown-item:is(:hover, :active) {
+    background-color: var(--bg-color-1);
+}
+
+header .nav-btns button {
+    margin: 0 .2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+
+header .btn-primary {
+    background-color: unset;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    height: 30px;
+    font-family: var(--font-base);
+    font-size: 13px;
+    color: var(--text-color-2);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+header .btn-primary:is(:hover, :active),
+header .btn-primary.show {
+    background-color: var(--main-color) !important;
+    border: 1px solid var(--main-color) !important;
+    color: #fff !important;
+}
+
+header .btn-round {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .lang-menu a,
+header .lang-menu button {
+    font-size: 10px !important;
+}
+
+header .lang-btn {
+    padding: 5px;
+}
+
+header .lang-btn img {
+    margin-right: 5px;
+}
+
+header .lang-btn:is(:hover, :active),
+header .lang-btn.show {
+    background-color: var(--bg-color-1) !important;
+    color: var(--text-color-2) !important;
+    border-color: var(--border-color) !important;
+}
+
+@media (max-width: 1370px) {
+    .navbar {
+        padding: 5px 10px;
+    }
+
+    header .bn-responsive {
+        border: unset;
+    }
+
+    .navbar-expand-xl .dropdown-menu.center.menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        visibility: hidden;
+        opacity: 0;
+        margin-top: 0;
+        padding: 0;
+        left: 50%;
+        transform: translate(0);
+        background-color: unset;
+        box-shadow: unset;
+        border-radius: unset;
+        border-left: 1px solid var(--border-color);
+    }
+
+    .navbar-expand-xl .dropdown-menu.center.menu .dropdown-item:hover{
+        background-color: var(--bg-color-1);
+    }
+
+    .navbar-expand-xl .dropdown-toggle{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    
+    .navbar-expand-xl .dropdown-menu.center.show {
+        max-height: 500px;
+        transition: max-height 0.5s ease;
+        visibility: visible;
+        opacity: 1;
+        padding: 10px;
+    }
+
+    .navbar-expand-xl .offcanvas.offcanvas-start {
+        width: 85%;
+        border-radius: 0 10px 10px 0 ;
+    }
+
+    .navbar-expand-xl .offcanvas .offcanvas-body {
+        justify-content: space-between;
+    }
+
+    .navbar-expand-xl .offcanvas .navbar-nav{
+        width: 100%;
+    }
+}
+
+/*------------------------------------
+# Hero
+------------------------------------*/
